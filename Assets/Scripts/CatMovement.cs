@@ -7,6 +7,7 @@ namespace ChaosCats
     {
         [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private float speed = 80f;
+        [SerializeField] private CatStatus catStatus;
 
         private Vector3 moveDirection;
         private Rigidbody rb;
@@ -32,6 +33,8 @@ namespace ChaosCats
 
         private void FixedUpdate()
         {
+            if (!catStatus.getHiding()) {
+
             Vector3 camForward = Camera.main.transform.forward;
             Vector3 camRight = Camera.main.transform.right;
 
@@ -44,6 +47,7 @@ namespace ChaosCats
             Vector3 move = (camRight * moveDirection.x + camForward * moveDirection.y) * speed * Time.deltaTime;
 
             rb.MovePosition(transform.position + move);
+            }
         }
 
         private void OnEnable()
