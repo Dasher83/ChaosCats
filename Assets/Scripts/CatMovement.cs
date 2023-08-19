@@ -8,6 +8,7 @@ namespace ChaosCats
         [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private float speed = 80f;
         [SerializeField] private CatStatus catStatus;
+        [SerializeField] private float obstacleDistance = 0.1f;
 
         private Vector3 moveDirection;
         private Rigidbody rb;
@@ -31,9 +32,20 @@ namespace ChaosCats
             moveDirection = Vector3.zero;
         }
 
+        private bool CanMove(Vector3 direction)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, direction, out hit, obstacleDistance))
+            {
+                // If there's an obstacle in the given direction within the specified distance, return false
+                return false;
+            }
+            return true;
+        }
+
         private void FixedUpdate()
         {
-            if (!catStatus.getHiding()) {
+            if (catStatus.getHiding()) return;
 
             Vector3 camForward = Camera.main.transform.forward;
             Vector3 camRight = Camera.main.transform.right;
@@ -43,10 +55,11 @@ namespace ChaosCats
             camForward.Normalize();
             camRight.Normalize();
 
-            // Calculate the movement direction based on the camera's orientation
             Vector3 move = (camRight * moveDirection.x + camForward * moveDirection.y) * speed * Time.deltaTime;
 
-            rb.MovePosition(transform.position + move);
+            if (CanMove(move.normalized))
+            {
+                rb.MovePosition(transform.position + move);
             }
         }
 
