@@ -32,8 +32,18 @@ namespace ChaosCats
 
         private void Update()
         {
-            Vector3 move = new Vector3(moveDirection.x, 0, moveDirection.y) * speed * Time.deltaTime;
-            transform.Translate(move);
+            Vector3 camForward = Camera.main.transform.forward;
+            Vector3 camRight = Camera.main.transform.right;
+
+            camForward.y = 0;
+            camRight.y = 0;
+            camForward.Normalize();
+            camRight.Normalize();
+
+            // Calculate the movement direction based on the camera's orientation
+            Vector3 move = (camRight * moveDirection.x + camForward * moveDirection.y) * speed * Time.deltaTime;
+
+            rb.MovePosition(transform.position + move);
         }
 
         private void OnEnable()
