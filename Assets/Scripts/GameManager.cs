@@ -22,7 +22,7 @@ namespace ChaosCats
         public int noiseLevel;
         public int frustrationLevel;
 
-        private bool gameOver = false;
+        private bool runOver = false;
 
         private void Start()
         {
@@ -34,13 +34,13 @@ namespace ChaosCats
 
         private void Update()
         {
-            if (gameOver)
+            if (runOver)
                 return;
 
             if (timeLeft == 0)
             {
-                Debug.Log("Game Over, time's up!");
-                gameOver = true;
+                Debug.Log("Run is Over, time's up!");
+                runOver = true;
                 return;
             }
             timeLeft = Mathf.Max(levelTime - (int)Time.timeSinceLevelLoad, 0);
