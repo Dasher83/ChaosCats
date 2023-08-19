@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 913728683110117236}
   m_Layer: 0
   m_Name: SmallObjectWrapper
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,8 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f6b09c739bc4c429d370e7ef997049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactForce: 30
-  inputActionAsset: {fileID: -944628639613478452, guid: 2f43647eaedf9a44b8b8b0c7e7ef3293, type: 3}
+  interactForce: 50
   smallObject: {fileID: 4459160689984131089}
   forcePoint: {fileID: 8694431075945201651}
 --- !u!65 &913728683110117236
