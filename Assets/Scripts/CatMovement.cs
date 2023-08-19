@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 namespace ChaosCats
@@ -9,6 +10,7 @@ namespace ChaosCats
         [SerializeField] private float speed = 80f;
         [SerializeField] private CatStatus catStatus;
         [SerializeField] private float obstacleDistance = 0.1f;
+        [SerializeField] private NavMeshAgent navMeshAgent;
 
         private Vector3 moveDirection;
         private Rigidbody rb;
@@ -57,10 +59,12 @@ namespace ChaosCats
 
             Vector3 move = (camRight * moveDirection.x + camForward * moveDirection.y) * speed * Time.deltaTime;
 
-            if (CanMove(move.normalized))
+            /*if (CanMove(move.normalized))
             {
                 rb.MovePosition(transform.position + move);
-            }
+            }*/
+
+            navMeshAgent.Move(move);
         }
 
         private void OnEnable()
