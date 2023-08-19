@@ -149,4 +149,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 2f43647eaedf9a44b8b8b0c7e7ef3293, type: 3}
-  speed: 5
+  speed: 50

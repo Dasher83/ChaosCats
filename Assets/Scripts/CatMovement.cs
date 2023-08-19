@@ -6,8 +6,8 @@ namespace ChaosCats
     public class CatMovement : MonoBehaviour
     {
         [SerializeField] private InputActionAsset inputActionAsset;
+        [SerializeField] private float speed = 80f;
 
-        public float speed = 5f;
         private Vector3 moveDirection;
         private Rigidbody rb;
         private InputActionMap inputActionMap;
@@ -30,7 +30,7 @@ namespace ChaosCats
             moveDirection = Vector3.zero;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             Vector3 camForward = Camera.main.transform.forward;
             Vector3 camRight = Camera.main.transform.right;
