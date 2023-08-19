@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ForceDirection
   - Floor
+  - Interactable
   layers:
   - Default
   - TransparentFX

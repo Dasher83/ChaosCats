@@ -15,6 +15,7 @@ namespace ChaosCats
                 Instantiate(brokenObjectPrefab, positionOnFloor, Quaternion.identity);
                 Debug.Log("Object broken at " + positionOnFloor + "!");
                 GameManager.Instance.MakeNoise(positionOnFloor);
+                GetComponentInParent<Interactable>().enabled = false;
                 Destroy(gameObject);
             }
         }

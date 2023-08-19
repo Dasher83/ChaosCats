@@ -25,7 +25,7 @@ namespace ChaosCats
 
             float distanceTargetDestination = Vector3.Distance(agent.destination, (Vector3)target);
 
-            if (distanceTargetDestination > 0.1f)
+            if (distanceTargetDestination > 0.2f)
             {
                 Debug.Log("Human going to " + target);
                 Debug.Log(distanceTargetDestination);
