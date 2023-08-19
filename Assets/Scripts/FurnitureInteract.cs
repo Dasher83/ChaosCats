@@ -15,6 +15,7 @@ namespace ChaosCats
         [SerializeField] private GameObject objetoRoto;
         [SerializeField] private CatStatus catStatus;
         [SerializeField] private Image overlayImage;
+        [SerializeField] private float inRangeDistance;
 
         // Darkening screen
         private float darkenSpeed = 9.0f;
@@ -60,22 +61,17 @@ namespace ChaosCats
             Debug.Log(playerInRange);
         }
 
-        private void OnTriggerEnter(Collider obj) {
-            if (obj.CompareTag("Player")) {
-                playerInRange = true;
-            }
+        private void FixedUpdate()
+        {
+            CheckPlayerInRange();
         }
 
-        private void OnTriggerStay(Collider obj) {
-            if (obj.CompareTag("Player")) {
-                playerInRange = true;
-            }
-        }
+        private void CheckPlayerInRange()
+        {
+            Vector3 distanceToPlayer = (player.transform.position - transform.position);
+            Debug.Log(distanceToPlayer.magnitude);
 
-        private void OnTriggerExit(Collider obj) {
-            if (obj.CompareTag("Player")) {
-                playerInRange = false;
-            }
+            playerInRange = distanceToPlayer.magnitude < inRangeDistance;
         }
 
         private void Interact(InputAction.CallbackContext context) {
