@@ -14,6 +14,7 @@ namespace ChaosCats
         {
             inputActionMap = inputActionAsset.FindActionMap("TestActions", true);
             inputActionMap.FindAction("ToggleDoor", true).performed += (_) => {
+                Debug.Log("Door Event fired");
                 eventBus.ToggleDoor?.Invoke();
             };
         }
