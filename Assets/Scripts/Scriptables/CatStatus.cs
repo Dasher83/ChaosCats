@@ -9,6 +9,10 @@ namespace ChaosCats
     {
         [SerializeField] private bool isHiding;
 
+        public void initHiding() {
+            isHiding = false;
+        }
+
         public void setHiding(bool state) {
             isHiding = state;
         }

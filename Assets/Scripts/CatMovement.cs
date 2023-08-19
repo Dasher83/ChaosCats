@@ -16,6 +16,11 @@ namespace ChaosCats
         private Rigidbody rb;
         private InputActionMap inputActionMap;
 
+        private void Start()
+        {
+            catStatus.initHiding();
+        }
+
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
