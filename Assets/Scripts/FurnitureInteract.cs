@@ -45,7 +45,6 @@ namespace ChaosCats
         }
 
         private void Update() {
-            /*
             if (isDarkening)
             {
                 currentAlpha = Mathf.MoveTowards(currentAlpha, targetAlpha, darkenSpeed * Time.deltaTime);
@@ -56,7 +55,7 @@ namespace ChaosCats
                 if (currentAlpha >= targetAlpha) {
                     isDarkening = false;
                 }
-            } */
+            }
 
             Debug.Log(playerInRange);
         }
@@ -88,12 +87,12 @@ namespace ChaosCats
             if (!catStatus.getHiding()) {
                 //Debug.Log("Esconderse");
                 catStatus.setHiding(true);
-                //StartDarkenEffect();
+                StartDarkenEffect();
                 SetTransparencia();
             } else {
                 //Debug.Log("No esconderse");
                 catStatus.setHiding(false);
-                //StopDarkenEffect();
+                StopDarkenEffect();
                 SetTransparencia();
             }
         }
@@ -114,18 +113,17 @@ namespace ChaosCats
             }
         }
 
-        /*
         public void StartDarkenEffect() {
             isDarkening = true;
             currentAlpha = overlayImage.color.a;
-        } */
-        /*
+        } 
+
         public void StopDarkenEffect() {
             isDarkening = false;
             currentAlpha = 0f;
             Color overlayColor = overlayImage.color;
             overlayColor.a = currentAlpha;
             overlayImage.color = overlayColor;
-        } */
+        }
     }
 }
