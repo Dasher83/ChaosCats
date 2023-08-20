@@ -16,6 +16,8 @@ namespace ChaosCats
         [SerializeField] private CatStatus catStatus;
         [SerializeField] private Image overlayImage;
         [SerializeField] private float inRangeDistance;
+        [SerializeField] private int durability;
+        [SerializeField] private ParticleSystem smokeParticleSystem;
 
         // Darkening screen
         private float darkenSpeed = 9.0f;
@@ -40,6 +42,7 @@ namespace ChaosCats
             player = GameObject.FindWithTag("Player");
             playerRenderer = player.GetComponent<Renderer>();
             originalColor = playerRenderer.material.color;
+            smokeParticleSystem.Stop();
 
             objetoRoto.SetActive(false);
         }
@@ -74,9 +77,14 @@ namespace ChaosCats
         }
 
         private void Interact(InputAction.CallbackContext context) {
-            if (playerInRange) {
-                CambiarModelo();
-                isBroken = true;
+            if (playerInRange && !isBroken) {
+                if (durability > 0) {
+                    durability--;
+                } else {
+                    CambiarModelo();
+                    smokeParticleSystem.Play();
+                    isBroken = true;
+                }
             }
         }
 
