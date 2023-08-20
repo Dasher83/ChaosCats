@@ -17,6 +17,9 @@ namespace ChaosCats
         private TMPro.TextMeshProUGUI TimerText;
 
         [SerializeField]
+        private TMPro.TextMeshProUGUI ScoreText;
+
+        [SerializeField]
         private HumanAI HumanAI;
 
         public int playerScore;
@@ -49,6 +52,8 @@ namespace ChaosCats
             timeLeft = Mathf.Max(levelTime - (int)Time.timeSinceLevelLoad, 0);
             if (TimerText != null)
                 TimerText.text = timeLeft.ToString();
+            if (ScoreText != null)
+                ScoreText.text = playerScore.ToString();
         }
 
         public void MakeNoise(Vector3 position) {
@@ -57,6 +62,10 @@ namespace ChaosCats
             frustrationLevel++;
             if (HumanAI != null)
                 HumanAI.target = position;
+        }
+
+        public void updateScore(int durability) {
+            playerScore += durability * 10;
         }
 
     }
