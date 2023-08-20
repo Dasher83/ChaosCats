@@ -16,14 +16,14 @@ namespace ChaosCats
 
         void Start()
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform.position;
             agent = GetComponent<NavMeshAgent>();
         }
 
         void Update()
         {
-            
-            if (target == null) {
+
+            if (target == null)
+            {
                 agent.SetDestination(GameObject.Find("Player").transform.position);
                 return;
             }
@@ -46,7 +46,8 @@ namespace ChaosCats
             }
         }
 
-        void OnDrawGizmos() {
+        void OnDrawGizmos()
+        {
             if (target != null)
                 Gizmos.DrawLine(transform.position, (Vector3)target);
         }
