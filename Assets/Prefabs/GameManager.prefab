@@ -52,9 +52,12 @@ MonoBehaviour:
   overlayImage: {fileID: 0}
   playerRenderer: {fileID: 0}
   transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
+  angryIcon: {fileID: 21300000, guid: 7874e893f89fc42f68a5dc4989abe4e8, type: 3}
+  sleepIcon: {fileID: 21300000, guid: 8c29572e951df42e58ecc8bb6dc44624, type: 3}
+  humanStateUI: {fileID: 0}
   alarmSound: {fileID: 8300000, guid: a95441975095b4f49840a49c97476aae, type: 3}
   playerScore: 0
-  levelTime: 10
+  levelTime: 30
   timeLeft: 0
   noiseLevel: 0
   frustrationLevel: 0

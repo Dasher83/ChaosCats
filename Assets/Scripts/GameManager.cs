@@ -38,6 +38,12 @@ namespace ChaosCats
         private Sprite angryIcon;
 
         [SerializeField]
+        private Sprite sleepIcon;
+
+        [SerializeField]
+        private Image humanStateUI;
+
+        [SerializeField]
         private AudioClip alarmSound;
 
         public int playerScore;
@@ -133,6 +139,14 @@ namespace ChaosCats
 
         public void UpdateScore(int pointsToAdd) {
             playerScore += pointsToAdd;
+        }
+
+        public void UpdateHumanStateUI(bool humanAwakened) {
+            if (humanAwakened) {
+                humanStateUI.sprite = angryIcon;
+            } else {
+                humanStateUI.sprite = sleepIcon;
+            }
         }
 
     }
