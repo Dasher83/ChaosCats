@@ -17,7 +17,7 @@ namespace ChaosCats
         private void Update()
         {
             CheckPlayerInRange();
-            if (playerInRange) eventBus.PlayerCaught?.Invoke();
+            if (playerInRange && !GameManager.Instance.catIsHidden) eventBus.PlayerCaught?.Invoke();
         }
 
         private void CheckPlayerInRange()

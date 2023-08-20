@@ -2064,6 +2064,14 @@ PrefabInstance:
       propertyPath: Home
       value: 
       objectReference: {fileID: 2121330283}
+    - target: {fileID: 5506694778798082923, guid: 2762e70348a274092870647f9b00e722, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5506694778798082923, guid: 2762e70348a274092870647f9b00e722, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7151257973647326739, guid: 2762e70348a274092870647f9b00e722, type: 3}
       propertyPath: m_Avatar
       value: 
