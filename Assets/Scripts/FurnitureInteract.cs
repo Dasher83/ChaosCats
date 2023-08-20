@@ -20,6 +20,7 @@ namespace ChaosCats
         [SerializeField] private ParticleSystem smokeParticleSystem;
         [SerializeField] private GameManager gameManager;
         [SerializeField] private Material transparentMaterial;
+        [SerializeField] private GameObject UIInteraction;
 
         // Darkening screen
         private float darkenSpeed = 9.0f;
@@ -49,6 +50,7 @@ namespace ChaosCats
             smokeParticleSystem.Stop();
             currentDurability = durability;
 
+            UIInteraction.SetActive(false);
             objetoRoto.SetActive(false);
         }
 
@@ -65,6 +67,12 @@ namespace ChaosCats
                 if (currentAlpha >= targetAlpha) {
                     isDarkening = false;
                 }
+            }
+
+            if (playerInRange) {
+                UIInteraction.SetActive(true);
+            } else {
+                UIInteraction.SetActive(false);
             }
         }
 /*
