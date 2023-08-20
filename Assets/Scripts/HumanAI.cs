@@ -17,9 +17,11 @@ namespace ChaosCats
 
         private NavMeshAgent agent;
         private Animator animator;
+        private GameObject[] interactableObjects;
 
         void Start()
         {
+            interactableObjects = GameObject.FindGameObjectsWithTag("Interactable");
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponentInChildren<Animator>();
         }
@@ -44,9 +46,11 @@ namespace ChaosCats
             }
             else
             {
-                if (agent.remainingDistance < 1.5f || catStatus.getHiding())
+                if (agent.remainingDistance <= agent.stoppingDistance + 1f || catStatus.getHiding())
                 {
                     target = null;
+                    int randomIndex = Random.Range(0, interactableObjects.Length);
+                    agent.SetDestination(interactableObjects[randomIndex].transform.position);
                     StartCoroutine(WaitAndGoHome());
                 }
             }
@@ -60,11 +64,8 @@ namespace ChaosCats
 
         IEnumerator WaitAndGoHome()
         {
-            Vector3 originalVelocity = agent.velocity;
-            agent.velocity = Vector3.zero;
             yield return new WaitForSeconds(5);
             agent.SetDestination(Home.transform.position);
-            agent.velocity = originalVelocity;
         }
     }
 }
