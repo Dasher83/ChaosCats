@@ -16,6 +16,7 @@ namespace ChaosCats
 
         void Start()
         {
+            target = GameObject.FindGameObjectWithTag("Player").transform.position;
             agent = GetComponent<NavMeshAgent>();
         }
 
