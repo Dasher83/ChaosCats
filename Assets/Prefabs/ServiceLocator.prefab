@@ -58,6 +58,11 @@ MonoBehaviour:
       volume: 1
       playsWithDelay: 0
       delay: 0
+    - audioClip: {fileID: 8300000, guid: a1cbf02480a3a438e8179bff44e33ad0, type: 3}
+      alias: meowClick
+      volume: 1
+      playsWithDelay: 0
+      delay: 0
 --- !u!114 &3694052101748164196
 MonoBehaviour:
   m_ObjectHideFlags: 0
