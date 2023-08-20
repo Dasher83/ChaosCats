@@ -15,6 +15,7 @@ namespace ChaosCats
         [SerializeField] private int durability;
         [SerializeField] private ParticleSystem smokeParticleSystem;
         [SerializeField] private Material transparentMaterial;
+        [SerializeField] private Transform npcWaypoint;
 
         [Header("Iconos de Interaccion")]
         [SerializeField] private GameObject UIInteraction;
@@ -22,6 +23,7 @@ namespace ChaosCats
        
         private int currentDurability;
         private bool isBroken = false;
+
 
         void Start()
         {
@@ -57,7 +59,11 @@ namespace ChaosCats
 
         override public void Interact() {
             if (!isBroken && !GameManager.Instance.catIsHidden) {
-                GameManager.Instance.MakeNoise(transform.position);
+                if (npcWaypoint != null) {
+                    GameManager.Instance.MakeNoise(npcWaypoint.position);
+                } else {
+                    GameManager.Instance.MakeNoise(transform.position);
+                }
                 smokeParticleSystem.Play();
                 if (currentDurability > 0) {
                     currentDurability--;

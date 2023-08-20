@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -810,14 +810,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: damagePointsValue
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: breakingPointsValue
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x

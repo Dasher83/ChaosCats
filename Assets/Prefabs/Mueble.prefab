@@ -34,6 +34,7 @@ Transform:
   - {fileID: 3839326698535588435}
   - {fileID: 3762756440981366527}
   - {fileID: 2654920682129877308}
+  - {fileID: 7657276082299805882}
   m_Father: {fileID: 5993140086771907442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4897193931031731865
@@ -70,11 +71,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactableObject: {fileID: 11400000, guid: c67a96608b11a4cee8efd212c93b133b, type: 2}
+  damagePointsValue: 5
+  breakingPointsValue: 25
   objetoIntacto: {fileID: 4468652642156103913}
   objetoRoto: {fileID: 4131828926478323791}
   durability: 5
   smokeParticleSystem: {fileID: 2804219740563305192}
   transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
+  npcWaypoint: {fileID: 7657276082299805882}
   UIInteraction: {fileID: 6989776481608272624}
   UIInteractables:
   - {fileID: 7206411112546005533}
@@ -5246,6 +5250,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8491010477521760690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7657276082299805882}
+  m_Layer: 0
+  m_Name: NpcWaypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7657276082299805882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491010477521760690}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.445, z: -1.156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 934282015107132557}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3657694991152477624
 PrefabInstance:
   m_ObjectHideFlags: 0
