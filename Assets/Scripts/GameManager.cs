@@ -99,7 +99,8 @@ namespace ChaosCats
             {
                 Debug.Log("Run is Over, time's up!");
                 runOver = true;
-                return;
+                eventBus.LoadSceneWithoutDelay?.Invoke("MainMenu");
+                //return;
             }
             timeLeft = Mathf.Max(levelTime - (int)Time.timeSinceLevelLoad, 0);
             if (TimerText != null)

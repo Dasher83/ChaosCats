@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c5da52389aa140de8865c2a68a1e4b2
+guid: a6bf945a2ff996e43a56e29bb63b6aba
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: GatoMain
+    second: {fileID: 2100000, guid: ca8b950e344c16e479b0eae03f1c6048, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GatoShady
+    second: {fileID: 2100000, guid: 370ae5bf28561d04ca9a6af56f5e45e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: ccc7579435aab70428a498d5bf2f3f5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material.001
-    second: {fileID: 2100000, guid: ef633746b220efc47bc1123067d65798, type: 2}
+    second: {fileID: 2100000, guid: e2c266f37cee42a4ca7106ecc507042f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tele_frame
-    second: {fileID: 2100000, guid: c2b7308542ea460409230b7a5075ceab, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: efc96419297efc64a85a25553a45c23f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: tele_pantalla
-    second: {fileID: 2100000, guid: 1dad9acd73b07e9478ec192562929970, type: 2}
+      name: Shady tapabocas
+    second: {fileID: 2100000, guid: a1b4fd81f520751458e292c857579a23, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

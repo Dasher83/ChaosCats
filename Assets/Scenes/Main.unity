@@ -3087,6 +3087,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1263099988}
     - target: {fileID: 22050178275196563, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
+      propertyPath: levelTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 22050178275196563, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
       propertyPath: overlayImage
       value: 
       objectReference: {fileID: 1251213168}
