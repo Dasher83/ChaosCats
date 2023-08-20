@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ee6d8785189f6e4192c0df2bfd866b2
+guid: dfca7e65b204b2749a31e0afeabc0d64
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,48 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Box203Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box204Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box208Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box209Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box210Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box219Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box228Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box252Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box264Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 357d278d6162822489081ceff7ed487c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
