@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593170598207446776, guid: afc8efd29ce2e4745b9368b7b101b6d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9687457
+      value: 8.43
       objectReference: {fileID: 0}
     - target: {fileID: 4593170598207446776, guid: afc8efd29ce2e4745b9368b7b101b6d3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1794,10 +1794,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f2522f6c04c75f245bd692fe61e3713b, type: 3}
     - target: {fileID: 22050178275196563, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
-      propertyPath: angryIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: f2522f6c04c75f245bd692fe61e3713b, type: 3}
-    - target: {fileID: 22050178275196563, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
       propertyPath: levelTime
       value: 30
       objectReference: {fileID: 0}
@@ -1938,3 +1934,5 @@ SceneRoots:
   - {fileID: 379226075}
   - {fileID: 577316776}
   - {fileID: 1923306097}
+  - {fileID: 1069218098}
+  - {fileID: 882528982}
