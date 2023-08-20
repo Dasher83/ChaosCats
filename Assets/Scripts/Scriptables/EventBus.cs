@@ -6,6 +6,6 @@ namespace ChaosCats
     [CreateAssetMenu(fileName = "EventBus", menuName = "ScriptableObjects/EventBus")]
     public class EventBus : ScriptableObject
     {
-        public UnityEvent ToggleDoor;
+        public UnityEvent MakeNoise;
     }
 }
