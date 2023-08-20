@@ -24,7 +24,6 @@ namespace ChaosCats
 
             if (target == null)
             {
-                agent.SetDestination(GameObject.Find("Player").transform.position);
                 return;
             }
 

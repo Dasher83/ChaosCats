@@ -90,6 +90,7 @@ namespace ChaosCats
 
         private void Interact(InputAction.CallbackContext context) {
             if (playerInRange && !isBroken) {
+                GameManager.Instance.MakeNoise(transform.position);
                 if (currentDurability > 0) {
                     currentDurability--;
                 } else {
