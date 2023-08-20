@@ -15,6 +15,7 @@ namespace ChaosCats
         {
             Debug.ClearDeveloperConsole();
             Debug.Log("Game Over");
+            ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
             eventBus.LoadSceneWithoutDelay?.Invoke("MainMenu");
         }
     }
