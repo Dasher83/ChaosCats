@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 08fdb25851e504a00a52611418bd1c26
+guid: 6039e09cb16519b41bc5f6e012e445d7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Sillon_cuerpo
-    second: {fileID: 2100000, guid: 4a9b9624f4626d14387ffe8784537e1f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Sillon_patas
-    second: {fileID: 2100000, guid: bd075ef1a81f3584398894a6bb2e83cf, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: ee38b7794f9b3c143bac5bc40882ac8c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

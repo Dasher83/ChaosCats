@@ -3,7 +3,32 @@ guid: d007e27d1ae094fb6944b4b67d1deca2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Calzon
+    second: {fileID: 2100000, guid: d4d59cf77559ff34daa9c8afb47e0abd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pelo
+    second: {fileID: 2100000, guid: 2e75dd4c158fe3b4c8f11a45b96032ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piel
+    second: {fileID: 2100000, guid: 2ffc69dd49b644e4cb7be3fb4aaf9579, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nariz
+    second: {fileID: 2100000, guid: e7f38bdbd570e264dbcfd618874fca72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pantufla
+    second: {fileID: 2100000, guid: ad6018c0922300345bc6825a5f92bcd7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
