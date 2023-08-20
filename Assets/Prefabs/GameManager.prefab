@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aab8e6e3d9844e2a22da04c7d47c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
   TimerText: {fileID: 0}
   ScoreText: {fileID: 0}
   HumanAI: {fileID: 0}

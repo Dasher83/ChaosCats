@@ -4,6 +4,8 @@ namespace ChaosCats
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] private EventBus eventBus;
+
         public static GameManager Instance { get; private set; }
         private void Awake()
         {
@@ -60,6 +62,7 @@ namespace ChaosCats
             Debug.Log("Noise made at " + position + "!");
             noiseLevel++;
             frustrationLevel++;
+            eventBus.MakeNoise?.Invoke();
             if (HumanAI != null)
                 HumanAI.target = position;
         }
