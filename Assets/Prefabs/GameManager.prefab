@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5402037256952591382}
   - component: {fileID: 22050178275196563}
+  - component: {fileID: 1907582627347528605}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2789504082272325337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7459788, y: 1.4125662, z: 6.7179356}
+  m_LocalPosition: {x: -10.193261, y: 7.612682, z: -4.665501}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,7 +48,20 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   HumanAI: {fileID: 0}
   playerScore: 0
-  levelTime: 60
+  levelTime: 10
   timeLeft: 0
   noiseLevel: 0
   frustrationLevel: 0
+--- !u!114 &1907582627347528605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789504082272325337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7357322d46bf9479ade6fb2a224018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}

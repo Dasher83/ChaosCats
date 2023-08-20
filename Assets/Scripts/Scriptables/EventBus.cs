@@ -7,5 +7,6 @@ namespace ChaosCats
     public class EventBus : ScriptableObject
     {
         public UnityEvent MakeNoise;
+        public UnityEvent PlayerCaught;
     }
 }
