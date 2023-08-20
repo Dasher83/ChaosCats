@@ -69,6 +69,12 @@ namespace ChaosCats
                 rb.MovePosition(transform.position + move);
             }*/
 
+            // rotate to face the direction of movement
+            if (move != Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15F);
+            }
+
             navMeshAgent.Move(move);
         }
 
