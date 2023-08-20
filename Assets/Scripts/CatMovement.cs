@@ -26,6 +26,7 @@ namespace ChaosCats
 
         private void Start()
         {
+            if (ServiceLocator.Instance.BackgroundMusicPlayer.IsPlaying) return;
             ServiceLocator.Instance.BackgroundMusicPlayer.Play("Main Theme");
         }
 

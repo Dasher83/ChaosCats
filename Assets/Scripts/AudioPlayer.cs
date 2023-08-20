@@ -21,8 +21,12 @@ namespace ChaosCats
         private AudioSourcePool audioSourcePool;
         private AudioLogger logger = new AudioLogger();
 
-        private void Start()
+        private bool isPlaying;
+        public bool IsPlaying => isPlaying;
+
+        private void Awake()
         {
+            isPlaying = false;
             audioSourcePool = GetComponent<AudioSourcePool>();
         }
 
@@ -49,6 +53,7 @@ namespace ChaosCats
             {
                 freeCleanableSource.audioSource.Play();
             }
+            isPlaying = true;
         }
 
         private IEnumerator PlayWithDelay(AudioSource audioSource, float delay)
@@ -79,6 +84,7 @@ namespace ChaosCats
                 playingAudioSource.audioSource.Stop();
                 playingAudioSource.lastStoppedTime = Time.time;
             }
+            isPlaying = false;
         }
 
         public void Pause(string audioClipAlias)
