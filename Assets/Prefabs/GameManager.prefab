@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5402037256952591382}
   - component: {fileID: 22050178275196563}
-  - component: {fileID: 1907582627347528605}
+  - component: {fileID: 1280586628837416472}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,13 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 0}
+  ScoreText: {fileID: 0}
   HumanAI: {fileID: 0}
   playerScore: 0
   levelTime: 10
   timeLeft: 0
   noiseLevel: 0
   frustrationLevel: 0
---- !u!114 &1907582627347528605
+--- !u!114 &1280586628837416472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

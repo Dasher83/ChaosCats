@@ -23,7 +23,6 @@ namespace ChaosCats
         private void CheckPlayerInRange()
         {
             Vector3 distanceToPlayer = (player.transform.position - transform.position);
-
             playerInRange = distanceToPlayer.magnitude < inRangeDistance;
         }
     }
