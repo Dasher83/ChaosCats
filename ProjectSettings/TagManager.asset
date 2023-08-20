@@ -7,6 +7,7 @@ TagManager:
   - ForceDirection
   - Floor
   - Interactable
+  - PlayerModel
   layers:
   - Default
   - TransparentFX

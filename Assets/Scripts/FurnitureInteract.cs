@@ -19,6 +19,7 @@ namespace ChaosCats
         [SerializeField] private int durability;
         [SerializeField] private ParticleSystem smokeParticleSystem;
         [SerializeField] private GameManager gameManager;
+        [SerializeField] private Material transparentMaterial;
 
         // Darkening screen
         private float darkenSpeed = 9.0f;
@@ -29,11 +30,11 @@ namespace ChaosCats
         // Interaction bools
         private int currentDurability;
         private bool isBroken = false;
-        private bool isHiding = false;
         private bool playerInRange = false;
+        private GameObject playerModel;
         private GameObject player;
         private Renderer playerRenderer;
-        private Color originalColor;
+        private Material originalMaterial;
         private InputActionMap inputActionMap;
 
         void Start()
@@ -42,8 +43,9 @@ namespace ChaosCats
             inputActionMap.FindAction("Interact", true).performed += Interact;
             inputActionMap.FindAction("Hide", true).performed += Hide;
             player = GameObject.FindWithTag("Player");
-            playerRenderer = player.GetComponent<Renderer>();
-            originalColor = playerRenderer.material.color;
+            playerModel = GameObject.FindWithTag("PlayerModel");
+            playerRenderer = playerModel.GetComponent<Renderer>();
+            originalMaterial = playerRenderer.material;
             smokeParticleSystem.Stop();
             currentDurability = durability;
 
@@ -51,6 +53,8 @@ namespace ChaosCats
         }
 
         private void Update() {
+            CheckPlayerInRange();
+
             if (isDarkening)
             {
                 currentAlpha = Mathf.MoveTowards(currentAlpha, targetAlpha, darkenSpeed * Time.deltaTime);
@@ -63,11 +67,11 @@ namespace ChaosCats
                 }
             }
         }
-
+/*
         private void FixedUpdate()
         {
             CheckPlayerInRange();
-        }
+        }*/
 
         private void CheckPlayerInRange()
         {
@@ -83,8 +87,8 @@ namespace ChaosCats
                 } else {
                     CambiarModelo();
                     smokeParticleSystem.Play();
-                    isBroken = true;
                     gameManager.updateScore(durability);
+                    isBroken = true;
                 }
             }
         }
@@ -93,6 +97,7 @@ namespace ChaosCats
             if (!playerInRange) {
                 return;
             }
+            Debug.Log($"playerInRange: {playerInRange}");
             if (!catStatus.getHiding()) {
                 //Debug.Log("Esconderse");
                 catStatus.setHiding(true);
@@ -115,10 +120,9 @@ namespace ChaosCats
 
         private void SetTransparencia() {
             if (catStatus.getHiding()) {
-                Color newColor = new Color(originalColor.r, originalColor.g, originalColor.b, 0.0f);
-                playerRenderer.material.color = newColor;
+                playerRenderer.material = transparentMaterial;
             } else {
-                playerRenderer.material.color = originalColor;
+                playerRenderer.material = originalMaterial;
             }
         }
 
