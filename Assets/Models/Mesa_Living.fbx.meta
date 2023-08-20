@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ee6d8785189f6e4192c0df2bfd866b2
+guid: 89ad82bdc256e60499505be99fe30c2d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,48 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Box203Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
+      name: Mesa_Patas
+    second: {fileID: 2100000, guid: a994ed11e80f3d74dbc982ec8d3dffcc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Box204Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box208Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box209Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box210Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box219Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box228Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box252Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Box264Mat
-    second: {fileID: 2100000, guid: 0580ebba8a752fe4e8ea59aa6f65f057, type: 2}
+      name: Mesa_Superficie
+    second: {fileID: 2100000, guid: f8efd4708052cac4fa869ae3832b1a02, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

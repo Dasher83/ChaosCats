@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7273070552123840814
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.7364833
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.7364833
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.7364833
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.7652
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.7546
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      propertyPath: m_Name
+      value: ChaosCats-Lampara
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1113156767847818578}
+  m_SourcePrefab: {fileID: 100100000, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+--- !u!1 &7507020023957759103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a9accbc1789e6e4199028be10947122, type: 3}
+  m_PrefabInstance: {fileID: 7273070552123840814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1113156767847818578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507020023957759103}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.60153365, y: 5.5171185, z: 0.60153365}
+  m_Center: {x: 0.0006973557, y: 2.693083, z: 0.00008745263}
