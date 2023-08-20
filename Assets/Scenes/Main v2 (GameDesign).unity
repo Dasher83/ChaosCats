@@ -915,6 +915,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1575310990255009835, guid: 51f48692bc502234eb5ab96c557b6f77, type: 3}
+      propertyPath: audioClipRegistry.audioClips.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: dc278c5d5bbf34eab97be29eee5f4130, type: 3}
     - target: {fileID: 6087601975906000559, guid: 51f48692bc502234eb5ab96c557b6f77, type: 3}
       propertyPath: m_Name
       value: ServiceLocator
