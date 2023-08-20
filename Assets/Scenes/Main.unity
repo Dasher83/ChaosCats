@@ -1360,6 +1360,10 @@ PrefabInstance:
       propertyPath: m_StoppingDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8825517942193244812, guid: 2762e70348a274092870647f9b00e722, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1497956883}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1389,7 +1393,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1950007868}
-  - component: {fileID: 1950007867}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1397,7 +1400,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1950007867
+--- !u!114 &1950007867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 22050178275196563, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
   m_PrefabInstance: {fileID: 8531630615523138333}
@@ -1408,6 +1411,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aab8e6e3d9844e2a22da04c7d47c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1950007868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950007866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1956380205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1769,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1950007868}
   - {fileID: 965005853}
   - {fileID: 6621065977227859597}
   - {fileID: 127049753}
