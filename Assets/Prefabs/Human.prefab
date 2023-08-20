@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5506694778798082923}
   - component: {fileID: 6793160740123378321}
   - component: {fileID: 8825517942193244812}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Human
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
   player: {fileID: 0}
-  inRangeDistance: 1
+  inRangeDistance: 3
 --- !u!1 &2554061701428258777
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 5973980670899845211}
   - component: {fileID: 7320651490374479803}
   - component: {fileID: 1441660467620882037}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,6 +308,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d007e27d1ae094fb6944b4b67d1deca2, type: 3}
       propertyPath: m_Name
       value: CHAOS-CATS_Humano-Pose-Tsin-animaciones
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d007e27d1ae094fb6944b4b67d1deca2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
