@@ -24,6 +24,11 @@ namespace ChaosCats
             inputActionMap.FindAction("Move", true).canceled += OnMoveCanceled;
         }
 
+        private void Start()
+        {
+            ServiceLocator.Instance.BackgroundMusicPlayer.Play("Main Theme");
+        }
+
         private void OnMovePerformed(InputAction.CallbackContext context)
         {
             moveDirection = context.ReadValue<Vector3>();
