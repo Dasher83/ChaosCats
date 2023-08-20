@@ -515,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: smokeParticleSystem
       value: 
-      objectReference: {fileID: 1623833455}
+      objectReference: {fileID: 1351781877}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.3810427
@@ -622,11 +622,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5ec7253f6f5768439dfd09c5e45e0b7, type: 3}
---- !u!23 &527162330 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3287183735681897286, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-  m_PrefabInstance: {fileID: 477321012}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &641188618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1157,6 +1152,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!198 &1351781877 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2804219740563305192, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
+  m_PrefabInstance: {fileID: 477321012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1440401409
 PrefabInstance:
   m_ObjectHideFlags: 0
