@@ -21,7 +21,11 @@ namespace ChaosCats
 
         void Update()
         {
-            if (target == null) return;
+            
+            if (target == null) {
+                agent.SetDestination(GameObject.Find("Player").transform.position);
+                return;
+            }
 
             float distanceTargetDestination = Vector3.Distance(agent.destination, (Vector3)target);
 
