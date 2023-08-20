@@ -830,6 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
+  meowClickSound: {fileID: 8300000, guid: a1cbf02480a3a438e8179bff44e33ad0, type: 3}
 --- !u!1 &996107944
 GameObject:
   m_ObjectHideFlags: 0

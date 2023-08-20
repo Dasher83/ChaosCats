@@ -17,6 +17,8 @@ namespace ChaosCats
         {
             Debug.Log("Retry!");
             ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
+            ServiceLocator.Instance.SoundEffectPlayer.Play("meowClick");
+            StartCoroutine(WaitForSound());
             eventBus.LoadSceneWithoutDelay?.Invoke("Main");
         }
 
@@ -24,7 +26,14 @@ namespace ChaosCats
         {
             Debug.Log("Quit!");
             ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
+            ServiceLocator.Instance.SoundEffectPlayer.Play("meowClick");
+            StartCoroutine(WaitForSound());
             Application.Quit();
+        }
+
+        IEnumerator WaitForSound()
+        {
+            yield return new WaitForSeconds(1);
         }
     }
 }
