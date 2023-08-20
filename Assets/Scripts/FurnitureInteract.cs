@@ -16,6 +16,7 @@ namespace ChaosCats
         [SerializeField] private ParticleSystem smokeParticleSystem;
         [SerializeField] private Material transparentMaterial;
         [SerializeField] private Transform npcWaypoint;
+        [SerializeField] private AudioClip breakSound;
 
         [Header("Iconos de Interaccion")]
         [SerializeField] private GameObject UIInteraction;
@@ -69,6 +70,9 @@ namespace ChaosCats
                     currentDurability--;
                     GameManager.Instance.UpdateScore(damagePointsValue);
                 } else {
+                    if (breakSound != null) {
+                        AudioSource.PlayClipAtPoint(breakSound, transform.position);
+                    }
                     CambiarModelo();
                     GameManager.Instance.UpdateScore(breakingPointsValue);
                     isBroken = true;

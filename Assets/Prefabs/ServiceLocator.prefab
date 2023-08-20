@@ -47,7 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVolume: 1
   audioClipRegistry:
-    audioClips: []
+    audioClips:
+    - audioClip: {fileID: 8300000, guid: a95441975095b4f49840a49c97476aae, type: 3}
+      alias: alarm
+      volume: 1
+      playsWithDelay: 0
+      delay: 0
+    - audioClip: {fileID: 8300000, guid: 01d0f0a6a14784609b440837146d0462, type: 3}
+      alias: wakeUpSound
+      volume: 1
+      playsWithDelay: 0
+      delay: 0
 --- !u!114 &3694052101748164196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +127,7 @@ MonoBehaviour:
     audioClips:
     - audioClip: {fileID: 8300000, guid: 6c89ab9bda99a6c4eae804aa335eef4e, type: 3}
       alias: Main Theme
-      volume: 0.614
+      volume: 0.343
       playsWithDelay: 0
       delay: 0
 --- !u!114 &322390596016022772

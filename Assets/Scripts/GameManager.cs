@@ -34,6 +34,9 @@ namespace ChaosCats
         [SerializeField] 
         private Material transparentMaterial;
 
+        [SerializeField]
+        private AudioClip alarmSound;
+
         public int playerScore;
         public int levelTime = 60;
         public int timeLeft;
@@ -67,7 +70,7 @@ namespace ChaosCats
 
         private Material originalMaterial;
 
-        private bool runOver = false;
+        public bool runOver = false;
 
         private void Start()
         {
@@ -100,7 +103,8 @@ namespace ChaosCats
                 Debug.Log("Run is Over, time's up!");
                 runOver = true;
                 ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
-                eventBus.LoadSceneWithoutDelay?.Invoke("MainMenu");
+                ServiceLocator.Instance.SoundEffectPlayer.Play("alarm");
+                eventBus.LoadSceneWithDelay?.Invoke("MainMenu", 4.0f);
                 //return;
             }
             timeLeft = Mathf.Max(levelTime - (int)Time.timeSinceLevelLoad, 0);

@@ -52,11 +52,13 @@ MonoBehaviour:
   overlayImage: {fileID: 0}
   playerRenderer: {fileID: 0}
   transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
+  alarmSound: {fileID: 8300000, guid: a95441975095b4f49840a49c97476aae, type: 3}
   playerScore: 0
   levelTime: 10
   timeLeft: 0
   noiseLevel: 0
   frustrationLevel: 0
+  runOver: 0
 --- !u!114 &1280586628837416472
 MonoBehaviour:
   m_ObjectHideFlags: 0

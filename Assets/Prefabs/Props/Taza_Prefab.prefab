@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2275341066504509762}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.907269, y: 1.75, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -313,6 +313,7 @@ MonoBehaviour:
   smokeParticleSystem: {fileID: 2806263281964960269}
   transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
   npcWaypoint: {fileID: 7373513684604064164}
+  breakSound: {fileID: 8300000, guid: 8e182ffd6a8684ca58dd0e61342f69e3, type: 3}
   UIInteraction: {fileID: 2532502419410649752}
   UIInteractables:
   - {fileID: 5729880629764531994}

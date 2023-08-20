@@ -20,6 +20,7 @@ namespace ChaosCats
 
             human.SetActive(true);
             Debug.Log("Human activated");
+            ServiceLocator.Instance.SoundEffectPlayer.Play("wakeUpSound");
             human.transform.position = spawnPoint.transform.position;
         }
     }

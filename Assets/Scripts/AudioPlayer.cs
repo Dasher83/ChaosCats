@@ -28,6 +28,7 @@ namespace ChaosCats
         {
             isPlaying = false;
             audioSourcePool = GetComponent<AudioSourcePool>();
+            DontDestroyOnLoad(gameObject);
         }
 
         public float MasterVolume

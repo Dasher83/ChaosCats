@@ -28,6 +28,14 @@ namespace ChaosCats
 
         void Update()
         {
+            if (GameManager.Instance.runOver)
+            {
+                agent.SetDestination(agent.transform.position);
+                animator.SetFloat("Speed", 0);
+                Destroy(this);
+                return;
+            }
+
             if (animator != null)
                 animator.SetFloat("Speed", agent.velocity.magnitude);
 
