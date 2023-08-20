@@ -5262,6 +5262,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5630594704121412666, guid: d5ec7253f6f5768439dfd09c5e45e0b7, type: 3}
+      propertyPath: human
+      value: 
+      objectReference: {fileID: 1529639118}
     - target: {fileID: 7719120785486246266, guid: d5ec7253f6f5768439dfd09c5e45e0b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.046494
@@ -5814,7 +5818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1529639119
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace ChaosCats
 {
-    public class TestDoor : MonoBehaviour
+    public class TestNoise : MonoBehaviour
     {
         [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private EventBus eventBus;
@@ -13,9 +13,9 @@ namespace ChaosCats
         private void Awake()
         {
             inputActionMap = inputActionAsset.FindActionMap("TestActions", true);
-            inputActionMap.FindAction("ToggleDoor", true).performed += (_) => {
-                Debug.Log("Door Event fired");
-                eventBus.ToggleDoor?.Invoke();
+            inputActionMap.FindAction("MakeNoise", true).performed += (_) => {
+                Debug.Log("MakeNoise Event fired");
+                eventBus.MakeNoise?.Invoke();
             };
         }
 

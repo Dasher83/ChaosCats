@@ -71,7 +71,6 @@ namespace ChaosCats
         private void CheckPlayerInRange()
         {
             Vector3 distanceToPlayer = (player.transform.position - transform.position);
-            Debug.Log(distanceToPlayer.magnitude);
 
             playerInRange = distanceToPlayer.magnitude < inRangeDistance;
         }

@@ -15,7 +15,7 @@ namespace ChaosCats
         {
             opened = false;
             SetDoorState();
-            eventBus.ToggleDoor.AddListener(Toggle);
+            eventBus.MakeNoise.AddListener(Toggle);
         }
 
         private void Toggle()
@@ -33,7 +33,7 @@ namespace ChaosCats
 
         private void OnDisable()
         {
-            eventBus.ToggleDoor.RemoveListener(Toggle);
+            eventBus.MakeNoise.RemoveListener(Toggle);
         }
     }
 }

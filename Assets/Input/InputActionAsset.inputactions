@@ -140,7 +140,7 @@
             "id": "aa3e48e4-3021-41bc-9ca4-9b0b1f581c2c",
             "actions": [
                 {
-                    "name": "ToggleDoor",
+                    "name": "MakeNoise",
                     "type": "Button",
                     "id": "0a590869-e07a-4af5-903c-fb8c3baf61a2",
                     "expectedControlType": "Button",
@@ -157,7 +157,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ToggleDoor",
+                    "action": "MakeNoise",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
