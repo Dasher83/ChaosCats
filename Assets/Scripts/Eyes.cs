@@ -14,7 +14,8 @@ namespace ChaosCats
             if (other.gameObject.CompareTag("Player") && humanAI != null)
             {
                 Debug.Log("Player detected!");
-                humanAI.target = other.gameObject.transform.position;
+                Vector3 target = new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
+                humanAI.target = target;
             }
         }
     }

@@ -13,14 +13,18 @@ namespace ChaosCats
         public Vector3? target = null;
 
         private NavMeshAgent agent;
+        private Animator animator;
 
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
+            animator = GetComponentInChildren<Animator>();
         }
 
         void Update()
         {
+            if (animator != null)
+                animator.SetFloat("Speed", agent.velocity.magnitude);
 
             if (target == null)
             {
