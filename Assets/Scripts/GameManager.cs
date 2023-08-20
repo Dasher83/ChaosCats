@@ -29,7 +29,7 @@ namespace ChaosCats
         private Image overlayImage;
 
         [SerializeField]
-        private Renderer playerRenderer;
+        private SkinnedMeshRenderer playerRenderer;
 
         [SerializeField] 
         private Material transparentMaterial;
@@ -41,7 +41,7 @@ namespace ChaosCats
         private Sprite sleepIcon;
 
         [SerializeField]
-        private Image humanStateUI;
+        private GameObject humanStateUI;
 
         [SerializeField]
         private AudioClip alarmSound;
@@ -143,10 +143,11 @@ namespace ChaosCats
 
         public void UpdateHumanStateUI(bool humanAwakened) {
             if (humanAwakened) {
-                humanStateUI.sprite = angryIcon;
+                humanStateUI.GetComponent<Image>().sprite = angryIcon;
             } else {
-                humanStateUI.sprite = sleepIcon;
+                humanStateUI.GetComponent<Image>().sprite = sleepIcon;
             }
+            humanStateUI.GetComponent<Animator>().Play("UIPop");
         }
 
     }

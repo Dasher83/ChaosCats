@@ -177,7 +177,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &6478499407054778172
 MonoBehaviour:
@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputActionAsset: {fileID: -944628639613478452, guid: 2f43647eaedf9a44b8b8b0c7e7ef3293, type: 3}
+  catAnimator: {fileID: 0}
 --- !u!1 &2482229883855622651
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,8 +309,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a9a44cbefa75c94da51ddf459754aeb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1433142182935146307}
   m_SourcePrefab: {fileID: 100100000, guid: 6a9a44cbefa75c94da51ddf459754aeb, type: 3}
+--- !u!1 &6928709633943937942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a9a44cbefa75c94da51ddf459754aeb, type: 3}
+  m_PrefabInstance: {fileID: 7847189620231184071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &1433142182935146307
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6928709633943937942}
+  m_Mesh: {fileID: 212370497460711607, guid: e21eca711e3a242b799e7826c3cd93aa, type: 3}
 --- !u!4 &7740676343401969964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a9a44cbefa75c94da51ddf459754aeb, type: 3}
