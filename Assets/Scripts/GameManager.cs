@@ -34,6 +34,9 @@ namespace ChaosCats
         [SerializeField] 
         private Material transparentMaterial;
 
+        [SerializeField]
+        private Sprite angryIcon;
+
         public int playerScore;
         public int levelTime = 60;
         public int timeLeft;
@@ -64,6 +67,8 @@ namespace ChaosCats
         private float darkenSpeed = 9.0f;
         private float targetAlpha = 0.8f;
         private float currentAlpha = 0f;
+        
+        private GameObject iconObject;
 
         private Material originalMaterial;
 
@@ -76,6 +81,7 @@ namespace ChaosCats
             noiseLevel = 0;
             frustrationLevel = 0;
             originalMaterial = playerRenderer.material;
+            iconObject = GameObject.FindWithTag("HumanStateUI");
         }
 
         private void Update()
@@ -115,6 +121,7 @@ namespace ChaosCats
             noiseLevel++;
             frustrationLevel++;
             eventBus.MakeNoise?.Invoke();
+            iconObject.GetComponent<Image>().sprite = angryIcon;
             if (HumanAI != null)
                 HumanAI.target = position;
         }
