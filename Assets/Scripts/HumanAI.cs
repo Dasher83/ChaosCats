@@ -57,7 +57,7 @@ namespace ChaosCats
 
         IEnumerator WaitAndGoHome()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(10);
             agent.SetDestination(Home.transform.position);
         }
     }
