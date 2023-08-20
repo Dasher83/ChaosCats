@@ -46,7 +46,7 @@ namespace ChaosCats
             }
             else
             {
-                if (agent.remainingDistance <= agent.stoppingDistance + 1f || catStatus.getHiding())
+                if (agent.remainingDistance <= agent.stoppingDistance || catStatus.getHiding())
                 {
                     target = null;
                     int randomIndex = Random.Range(0, interactableObjects.Length);
