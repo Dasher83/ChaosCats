@@ -13,12 +13,15 @@ namespace ChaosCats
         private bool isInRange = false;
         private InputActionMap inputActionMap;
 
+        public Animator catAnimator;
+
         void Start()
         {
             interactionCollider = GetComponentInChildren<SphereCollider>();
             inputActionMap = inputActionAsset.FindActionMap("PlayerActions", true);
             inputActionMap.FindAction("Interact", true).performed += Interact;
             inputActionMap.FindAction("Hide", true).performed += Hide;
+            catAnimator = GetComponentInChildren<Animator>();
         }
 
         void OnTriggerEnter(Collider obj) {
@@ -53,7 +56,10 @@ namespace ChaosCats
                     )
                 );
                 if (interactables.Length > 0)
+                {
                     interactables[0].GetComponent<Interactable>().Interact();
+                    catAnimator.SetTrigger("Attack");
+                }                    
             }
         }
 

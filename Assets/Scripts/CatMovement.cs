@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -15,6 +16,7 @@ namespace ChaosCats
         private Vector3 moveDirection;
         private Rigidbody rb;
         private InputActionMap inputActionMap;
+        public Animator catAnimator;
 
         private void Awake()
         {
@@ -28,6 +30,7 @@ namespace ChaosCats
         {
             if (ServiceLocator.Instance.BackgroundMusicPlayer.IsPlaying) return;
             ServiceLocator.Instance.BackgroundMusicPlayer.Play("Main Theme");
+            catAnimator = GetComponentInChildren<Animator>();
         }
 
         private void OnMovePerformed(InputAction.CallbackContext context)
@@ -76,6 +79,11 @@ namespace ChaosCats
             if (move != Vector3.zero)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(move), 0.15F);
+                catAnimator.SetBool("IsWalking", true);
+            }
+            else
+            {
+                catAnimator.SetBool("IsWalking", false);
             }
 
             navMeshAgent.Move(move);

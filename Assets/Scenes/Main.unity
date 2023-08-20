@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -286,11 +286,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!23 &217876705 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1220982834053296915, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-  m_PrefabInstance: {fileID: 2396505545203803581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &379226075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1734,7 +1729,7 @@ PrefabInstance:
     - target: {fileID: 22050178275196563, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
       propertyPath: playerRenderer
       value: 
-      objectReference: {fileID: 217876705}
+      objectReference: {fileID: 0}
     - target: {fileID: 2789504082272325337, guid: 3bcbcd7c7675d453d9aa79b6bd17febd, type: 3}
       propertyPath: m_Name
       value: GameManager
