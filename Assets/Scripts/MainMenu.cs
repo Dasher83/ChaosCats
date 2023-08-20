@@ -8,15 +8,22 @@ namespace ChaosCats
     {
         [SerializeField] private EventBus eventBus;
 
+        private void Start()
+        {
+            ServiceLocator.Instance.BackgroundMusicPlayer.Play("Main Theme");
+        }
+
         public void Retry()
         {
             Debug.Log("Retry!");
+            ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
             eventBus.LoadSceneWithoutDelay?.Invoke("Main");
         }
 
         public void Quit()
         {
             Debug.Log("Quit!");
+            ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
             Application.Quit();
         }
     }
