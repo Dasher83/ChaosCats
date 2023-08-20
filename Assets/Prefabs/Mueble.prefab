@@ -79,6 +79,8 @@ MonoBehaviour:
   smokeParticleSystem: {fileID: 2804219740563305192}
   transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
   npcWaypoint: {fileID: 7657276082299805882}
+  breakSound: {fileID: 8300000, guid: 27eebdf96362248ac8038e79c7ea3ccc, type: 3}
+  hideSound: {fileID: 8300000, guid: 5b225f1e62d154843b747b0dabdfbe0b, type: 3}
   UIInteraction: {fileID: 6989776481608272624}
   UIInteractables:
   - {fileID: 7206411112546005533}

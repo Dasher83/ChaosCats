@@ -125,7 +125,6 @@ namespace ChaosCats
             noiseLevel++;
             frustrationLevel++;
             eventBus.MakeNoise?.Invoke();
-            iconObject.GetComponent<Image>().sprite = angryIcon;
             if (HumanAI != null)
                 HumanAI.target = position;
         }

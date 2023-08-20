@@ -17,6 +17,7 @@ namespace ChaosCats
         [SerializeField] private Material transparentMaterial;
         [SerializeField] private Transform npcWaypoint;
         [SerializeField] private AudioClip breakSound;
+        [SerializeField] private AudioClip hideSound;
 
         [Header("Iconos de Interaccion")]
         [SerializeField] private GameObject UIInteraction;
@@ -85,6 +86,9 @@ namespace ChaosCats
 
             if (!GameManager.Instance.catIsHidden) {
                 //Debug.Log("Esconderse");
+                if (breakSound != null) {
+                    AudioSource.PlayClipAtPoint(hideSound, transform.position);
+                }
                 GameManager.Instance.catIsHidden = true;
                 HideUI();
             } else {
