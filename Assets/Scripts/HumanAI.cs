@@ -10,6 +10,9 @@ namespace ChaosCats
         [SerializeField]
         private Transform Home;
 
+        [SerializeField]
+        private CatStatus catStatus;
+
         public Vector3? target = null;
 
         private NavMeshAgent agent;
@@ -41,7 +44,7 @@ namespace ChaosCats
             }
             else
             {
-                if (agent.remainingDistance <= agent.stoppingDistance)
+                if (agent.remainingDistance < 1.5f || catStatus.getHiding())
                 {
                     target = null;
                     StartCoroutine(WaitAndGoHome());
@@ -57,8 +60,11 @@ namespace ChaosCats
 
         IEnumerator WaitAndGoHome()
         {
-            yield return new WaitForSeconds(10);
+            Vector3 originalVelocity = agent.velocity;
+            agent.velocity = Vector3.zero;
+            yield return new WaitForSeconds(5);
             agent.SetDestination(Home.transform.position);
+            agent.velocity = originalVelocity;
         }
     }
 }
