@@ -15,8 +15,7 @@ namespace ChaosCats
         {
             Debug.ClearDeveloperConsole();
             Debug.Log("Game Over");
-            Time.timeScale = 0;
-            Application.Quit();
+            eventBus.LoadSceneWithoutDelay?.Invoke("MainMenu");
         }
     }
 }
