@@ -110,7 +110,9 @@ namespace ChaosCats
                 runOver = true;
                 ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
                 ServiceLocator.Instance.SoundEffectPlayer.Play("alarm");
+                eventBus.UpdateScriptableScore?.Invoke(playerScore);
                 eventBus.LoadSceneWithDelay?.Invoke("MainMenu", 4.0f);
+
                 //return;
             }
             timeLeft = Mathf.Max(levelTime - (int)Time.timeSinceLevelLoad, 0);
