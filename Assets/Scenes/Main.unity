@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2066,7 +2066,7 @@ PrefabInstance:
       objectReference: {fileID: 2121330283}
     - target: {fileID: 5506694778798082923, guid: 2762e70348a274092870647f9b00e722, type: 3}
       propertyPath: m_Radius
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5506694778798082923, guid: 2762e70348a274092870647f9b00e722, type: 3}
       propertyPath: m_StoppingDistance
@@ -2084,6 +2084,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1497956883}
+    - target: {fileID: 8825517942193244812, guid: 2762e70348a274092870647f9b00e722, type: 3}
+      propertyPath: inRangeDistance
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4509690118354779859, guid: 2762e70348a274092870647f9b00e722, type: 3}
