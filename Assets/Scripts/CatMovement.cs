@@ -1,8 +1,6 @@
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
-using UnityEngine.Video;
 
 namespace ChaosCats
 {
