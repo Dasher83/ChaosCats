@@ -117,8 +117,8 @@ namespace ChaosCats
                 HumanAI.target = position;
         }
 
-        public void UpdateScore(int durability) {
-            playerScore += durability * 10;
+        public void UpdateScore(int pointsToAdd) {
+            playerScore += pointsToAdd;
         }
 
     }

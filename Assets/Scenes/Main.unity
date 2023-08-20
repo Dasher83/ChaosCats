@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -307,10 +303,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.72
@@ -378,10 +370,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.4
@@ -443,10 +431,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (21)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -765,10 +749,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.34
@@ -832,8 +812,12 @@ PrefabInstance:
       value: Sofa
       objectReference: {fileID: 0}
     - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
+      propertyPath: damagePointsValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
+      propertyPath: breakingPointsValue
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -952,10 +936,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1333,10 +1313,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.3
@@ -1398,10 +1374,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (16)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1510,10 +1482,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 39.1
@@ -1575,10 +1543,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1851,10 +1815,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.1
@@ -2114,10 +2074,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.2
@@ -2179,10 +2135,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2247,8 +2199,12 @@ PrefabInstance:
       value: Sofa (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
+      propertyPath: damagePointsValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
+      propertyPath: breakingPointsValue
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2316,10 +2272,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2399,10 +2351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -38.07
@@ -2464,10 +2412,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2531,10 +2475,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -36.7
@@ -2596,10 +2536,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2663,10 +2599,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.72
@@ -2728,10 +2660,6 @@ PrefabInstance:
     - target: {fileID: 4136607768754310370, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_Name
       value: Sofa (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4214842122055088146, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
-      propertyPath: canHide
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5993140086771907442, guid: 23b67a852359de44ab87f308d59bbaaa, type: 3}
       propertyPath: m_LocalPosition.x

@@ -8,6 +8,8 @@ namespace ChaosCats
 {
     public class FurnitureInteract : Interactable
     {
+        public int damagePointsValue;
+        public int breakingPointsValue;
         [SerializeField] private GameObject objetoIntacto;
         [SerializeField] private GameObject objetoRoto;
         [SerializeField] private int durability;
@@ -17,8 +19,7 @@ namespace ChaosCats
         [Header("Iconos de Interaccion")]
         [SerializeField] private GameObject UIInteraction;
         public GameObject[] UIInteractables;
-
-       //public Sprite[] UISprites;
+       
         private int currentDurability;
         private bool isBroken = false;
 
@@ -60,9 +61,10 @@ namespace ChaosCats
                 smokeParticleSystem.Play();
                 if (currentDurability > 0) {
                     currentDurability--;
+                    GameManager.Instance.UpdateScore(damagePointsValue);
                 } else {
                     CambiarModelo();
-                    GameManager.Instance.UpdateScore(durability);
+                    GameManager.Instance.UpdateScore(breakingPointsValue);
                     isBroken = true;
                 }
             }

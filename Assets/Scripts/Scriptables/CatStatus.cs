@@ -9,6 +9,8 @@ namespace ChaosCats
     {
         [SerializeField] private bool isHiding;
 
+        public float playerScore;
+
         public void initHiding() {
             isHiding = false;
         }
