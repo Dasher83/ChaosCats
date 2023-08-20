@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: CatStatus
   m_EditorClassIdentifier: 
   isHiding: 0
+  eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
+  playerScore: 0

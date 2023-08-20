@@ -11,5 +11,6 @@ namespace ChaosCats
         public UnityEvent PlayerCaught;
         public UnityEvent<string> LoadSceneWithoutDelay;
         public UnityEvent<string, float> LoadSceneWithDelay;
+        public UnityEvent<int> UpdateScriptableScore;
     }
 }

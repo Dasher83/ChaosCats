@@ -8,11 +8,12 @@ namespace ChaosCats
     public class CatStatus : ScriptableObject
     {
         [SerializeField] private bool isHiding;
+        [SerializeField] private EventBus eventBus;
 
-        public float playerScore;
+        public int playerScore;
 
         public void initHiding() {
-            isHiding = false;
+            isHiding = false;            
         }
 
         public void setHiding(bool state) {
@@ -21,6 +22,16 @@ namespace ChaosCats
 
         public bool getHiding() {
             return isHiding;
+        }
+
+        private void OnEnable()
+        {
+            eventBus.UpdateScriptableScore.AddListener(SetPlayerScore);
+        }
+
+        private void SetPlayerScore(int score)
+        {
+            playerScore = score;
         }
     }
 }
