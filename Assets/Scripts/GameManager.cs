@@ -99,6 +99,7 @@ namespace ChaosCats
             {
                 Debug.Log("Run is Over, time's up!");
                 runOver = true;
+                ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
                 eventBus.LoadSceneWithoutDelay?.Invoke("MainMenu");
                 //return;
             }
