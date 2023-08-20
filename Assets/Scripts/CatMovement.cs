@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.Video;
 
 namespace ChaosCats
 {
@@ -9,17 +10,11 @@ namespace ChaosCats
         [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private float speed = 80f;
         [SerializeField] private CatStatus catStatus;
-        [SerializeField] private float obstacleDistance = 0.1f;
         [SerializeField] private NavMeshAgent navMeshAgent;
 
         private Vector3 moveDirection;
         private Rigidbody rb;
         private InputActionMap inputActionMap;
-
-        private void Start()
-        {
-            catStatus.initHiding();
-        }
 
         private void Awake()
         {
@@ -39,7 +34,7 @@ namespace ChaosCats
             moveDirection = Vector3.zero;
         }
 
-        private bool CanMove(Vector3 direction)
+        /* private bool CanMove(Vector3 direction)
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, direction, out hit, obstacleDistance))
@@ -48,11 +43,11 @@ namespace ChaosCats
                 return false;
             }
             return true;
-        }
+        } */
 
         private void FixedUpdate()
         {
-            if (catStatus.getHiding()) return;
+            if (GameManager.Instance.catIsHidden) return;
 
             Vector3 camForward = Camera.main.transform.forward;
             Vector3 camRight = Camera.main.transform.right;
@@ -62,7 +57,9 @@ namespace ChaosCats
             camForward.Normalize();
             camRight.Normalize();
 
-            Vector3 move = (camRight * moveDirection.x + camForward * moveDirection.y) * speed * Time.deltaTime;
+            Vector3 normalizedMoveDirection = moveDirection.normalized;
+
+            Vector3 move = (camRight * normalizedMoveDirection.x + camForward * normalizedMoveDirection.y) * speed * Time.deltaTime;
 
             /*if (CanMove(move.normalized))
             {

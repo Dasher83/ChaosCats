@@ -49,6 +49,9 @@ MonoBehaviour:
   TimerText: {fileID: 0}
   ScoreText: {fileID: 0}
   HumanAI: {fileID: 0}
+  overlayImage: {fileID: 0}
+  playerRenderer: {fileID: 0}
+  transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
   playerScore: 0
   levelTime: 10
   timeLeft: 0

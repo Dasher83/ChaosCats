@@ -10,7 +10,7 @@ namespace ChaosCats
 
         private SphereCollider interactionCollider;
 
-        private bool canInteract = false;
+        private bool isInRange = false;
         private InputActionMap inputActionMap;
 
         void Start()
@@ -18,25 +18,34 @@ namespace ChaosCats
             interactionCollider = GetComponentInChildren<SphereCollider>();
             inputActionMap = inputActionAsset.FindActionMap("PlayerActions", true);
             inputActionMap.FindAction("Interact", true).performed += Interact;
+            inputActionMap.FindAction("Hide", true).performed += Hide;
         }
 
         void OnTriggerEnter(Collider obj) {
             if (obj.CompareTag("Interactable")) {
-                canInteract = true;
+                isInRange = true;
+                Interactable interactable = obj.GetComponent<Interactable>();
+                if (interactable != null)
+                    interactable.ShowUI();
             }
         }
 
         void OnTriggerExit(Collider obj) {
             if (obj.CompareTag("Interactable")) {
-                canInteract = false;
+                isInRange = false;
+                Interactable interactable = obj.GetComponent<Interactable>();
+                if (interactable != null)
+                    interactable.HideUI();
             }
         }
 
         private void Interact(InputAction.CallbackContext context) {
-            if (canInteract) {
+            if (isInRange) {
                 Collider[] closeColliders = Physics.OverlapSphere(transform.position + interactionCollider.center, interactionCollider.radius);
                 Collider[] interactables = Array.FindAll(closeColliders, collider => 
-                    collider.CompareTag("Interactable") && collider.GetComponent<Interactable>().enabled
+                    collider.CompareTag("Interactable") &&
+                     collider.GetComponent<Interactable>().enabled &&
+                      collider.GetComponent<Interactable>().interactableObject.canInteract
                 );
                 Array.Sort(interactables, (x, y) => 
                     Vector3.Distance(x.transform.position, transform.position).CompareTo(
@@ -45,6 +54,24 @@ namespace ChaosCats
                 );
                 if (interactables.Length > 0)
                     interactables[0].GetComponent<Interactable>().Interact();
+            }
+        }
+
+        private void Hide(InputAction.CallbackContext context) {
+            if (isInRange) {
+                Collider[] closeColliders = Physics.OverlapSphere(transform.position + interactionCollider.center, interactionCollider.radius);
+                Collider[] interactables = Array.FindAll(closeColliders, collider => 
+                    collider.CompareTag("Interactable") &&
+                     collider.GetComponent<Interactable>().enabled &&
+                      collider.GetComponent<Interactable>().interactableObject.canHide
+                );
+                Array.Sort(interactables, (x, y) => 
+                    Vector3.Distance(x.transform.position, transform.position).CompareTo(
+                        Vector3.Distance(y.transform.position, transform.position)
+                    )
+                );
+                if (interactables.Length > 0)
+                    interactables[0].GetComponent<Interactable>().Hide();
             }
         }
     }

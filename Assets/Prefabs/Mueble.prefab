@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4214842122055088146}
   m_Layer: 0
   m_Name: TriggerMueble
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,20 +69,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d31902a80b45454bb03362a061b8c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canHide: 0
-  canDestroy: 1
-  inputActionAsset: {fileID: -944628639613478452, guid: 2f43647eaedf9a44b8b8b0c7e7ef3293, type: 3}
+  interactableObject: {fileID: 11400000, guid: c67a96608b11a4cee8efd212c93b133b, type: 2}
   objetoIntacto: {fileID: 4468652642156103913}
   objetoRoto: {fileID: 4131828926478323791}
-  catStatus: {fileID: 11400000, guid: 73cb91a6dade99945b00bbedcd9977a2, type: 2}
-  overlayImage: {fileID: 0}
-  inRangeDistance: 4
   durability: 5
   smokeParticleSystem: {fileID: 2804219740563305192}
-  gameManager: {fileID: 0}
   transparentMaterial: {fileID: 2100000, guid: f49972ff84bf4444e9297ff31e7e74c9, type: 2}
   UIInteraction: {fileID: 6989776481608272624}
-  uIInteractables:
+  UIInteractables:
   - {fileID: 7206411112546005533}
   - {fileID: 3429373235403290689}
 --- !u!1 &2524291966276516139

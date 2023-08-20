@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace ChaosCats
 {
-    public class ObjectInteract : Interactable
+    public class SmallObjectInteract : Interactable
     {
         public float interactForce = 1000f;
 

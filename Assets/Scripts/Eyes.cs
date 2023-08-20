@@ -11,7 +11,7 @@ namespace ChaosCats
 
         void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.CompareTag("Player") && humanAI != null)
+            if (other.gameObject.CompareTag("Player") && humanAI != null && !GameManager.Instance.catIsHidden)
             {
                 Debug.Log("Player detected!");
                 Vector3 target = new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);

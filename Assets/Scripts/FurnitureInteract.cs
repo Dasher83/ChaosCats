@@ -6,53 +6,24 @@ using UnityEngine.UI;
 
 namespace ChaosCats
 {
-    public class FurnitureInteract : MonoBehaviour
+    public class FurnitureInteract : Interactable
     {
-        [SerializeField] private bool canHide;
-        [SerializeField] private bool canDestroy;
-        [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private GameObject objetoIntacto;
         [SerializeField] private GameObject objetoRoto;
-        [SerializeField] private CatStatus catStatus;
-        [SerializeField] private Image overlayImage;
-        [SerializeField] private float inRangeDistance;
         [SerializeField] private int durability;
         [SerializeField] private ParticleSystem smokeParticleSystem;
-        [SerializeField] private GameManager gameManager;
         [SerializeField] private Material transparentMaterial;
 
         [Header("Iconos de Interaccion")]
         [SerializeField] private GameObject UIInteraction;
-        public GameObject[] uIInteractables;
-
+        public GameObject[] UIInteractables;
 
        //public Sprite[] UISprites;
-
-        // Darkening screen
-        private float darkenSpeed = 9.0f;
-        private bool isDarkening = false;
-        private float targetAlpha = 0.8f;
-        private float currentAlpha = 0f;
-
-        // Interaction bools
         private int currentDurability;
         private bool isBroken = false;
-        [SerializeField]private bool playerInRange = false;
-        private GameObject playerModel;
-        private GameObject player;
-        private Renderer playerRenderer;
-        private Material originalMaterial;
-        private InputActionMap inputActionMap;
 
         void Start()
         {
-            inputActionMap = inputActionAsset.FindActionMap("PlayerActions", true);
-            inputActionMap.FindAction("Interact", true).performed += Interact;
-            inputActionMap.FindAction("Hide", true).performed += Hide;
-            player = GameObject.FindWithTag("Player");
-            playerModel = GameObject.FindWithTag("PlayerModel");
-            playerRenderer = playerModel.GetComponent<Renderer>();
-            originalMaterial = playerRenderer.material;
             smokeParticleSystem.Stop();
             currentDurability = durability;
 
@@ -61,28 +32,16 @@ namespace ChaosCats
             InteractTypeCheck();
         }
 
-        private void Update() {
-            //CheckPlayerInRange();
-
-            if (isDarkening)
-            {
-                currentAlpha = Mathf.MoveTowards(currentAlpha, targetAlpha, darkenSpeed * Time.deltaTime);
-                Color overlayColor = overlayImage.color;
-                overlayColor.a = currentAlpha;
-                overlayImage.color = overlayColor;
-
-                if (currentAlpha >= targetAlpha) {
-                    isDarkening = false;
-                }
-            }
-
-            if (playerInRange) {
-                UIInteraction.SetActive(true);
-            } else {
-                UIInteraction.SetActive(false);
-            }
+        override public void ShowUI() {
+            if (isBroken) return;
+            UIInteraction.SetActive(true);
         }
-/*
+
+        override public void HideUI() {
+            UIInteraction.SetActive(false);
+        }
+
+        /*
         private void FixedUpdate()
         {
             CheckPlayerInRange();
@@ -95,99 +54,44 @@ namespace ChaosCats
             playerInRange = distanceToPlayer.magnitude < inRangeDistance;
         }*/
 
-        private void Interact(InputAction.CallbackContext context) {
-            if (playerInRange && !isBroken) {
+        override public void Interact() {
+            if (!isBroken && !GameManager.Instance.catIsHidden) {
                 GameManager.Instance.MakeNoise(transform.position);
+                smokeParticleSystem.Play();
                 if (currentDurability > 0) {
                     currentDurability--;
                 } else {
                     CambiarModelo();
-                    smokeParticleSystem.Play();
-                    gameManager.updateScore(durability);
+                    GameManager.Instance.UpdateScore(durability);
                     isBroken = true;
                 }
             }
         }
 
-        private void Hide(InputAction.CallbackContext context) {
-            if (!playerInRange) {
-                return;
-            }
-            Debug.Log($"playerInRange: {playerInRange}");
-            if (!catStatus.getHiding()) {
+        override public void Hide() {
+            if (isBroken) return;
+
+            if (!GameManager.Instance.catIsHidden) {
                 //Debug.Log("Esconderse");
-                catStatus.setHiding(true);
-                StartDarkenEffect();
-                SetTransparencia();
+                GameManager.Instance.catIsHidden = true;
+                HideUI();
             } else {
                 //Debug.Log("No esconderse");
-                catStatus.setHiding(false);
-                StopDarkenEffect();
-                SetTransparencia();
+                GameManager.Instance.catIsHidden = false;
+                ShowUI();
             }
         }
 
         private void CambiarModelo() {
-            if (!isBroken) {
-                objetoIntacto.SetActive(false);
-                objetoRoto.SetActive(true);
-            }
-        }
-
-        private void SetTransparencia() {
-            if (catStatus.getHiding()) {
-                playerRenderer.material = transparentMaterial;
-            } else {
-                playerRenderer.material = originalMaterial;
-            }
-        }
-
-        public void StartDarkenEffect() {
-            isDarkening = true;
-            currentAlpha = overlayImage.color.a;
-        } 
-
-        public void StopDarkenEffect() {
-            isDarkening = false;
-            currentAlpha = 0f;
-            Color overlayColor = overlayImage.color;
-            overlayColor.a = currentAlpha;
-            overlayImage.color = overlayColor;
+            objetoIntacto.SetActive(false);
+            objetoRoto.SetActive(true);
+            HideUI();
         }
 
         private void InteractTypeCheck()
         {
-            if (canHide)
-            {
-                uIInteractables[0].SetActive(true);
-            }
-            else
-            {
-                uIInteractables[0].SetActive(false);
-            }
-            if(canDestroy) {
-                uIInteractables[1].SetActive(true);
-            }
-            else
-            {
-                uIInteractables[1].SetActive(false);
-            }
-        }
-
-        private void OnTriggerStay(Collider other)
-        {
-            if(other.gameObject == player)
-            {
-                playerInRange = true;
-            }
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.gameObject == player)
-            {
-                playerInRange = false;
-            }
+            if (UIInteractables[0] != null) UIInteractables[0].SetActive(interactableObject.canHide);
+            if (UIInteractables[1] != null) UIInteractables[1].SetActive(interactableObject.canInteract);
         }
     }
 }
