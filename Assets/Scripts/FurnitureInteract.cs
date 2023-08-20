@@ -20,7 +20,13 @@ namespace ChaosCats
         [SerializeField] private ParticleSystem smokeParticleSystem;
         [SerializeField] private GameManager gameManager;
         [SerializeField] private Material transparentMaterial;
+
+        [Header("Iconos de Interaccion")]
         [SerializeField] private GameObject UIInteraction;
+        public GameObject[] uIInteractables;
+
+
+       //public Sprite[] UISprites;
 
         // Darkening screen
         private float darkenSpeed = 9.0f;
@@ -31,7 +37,7 @@ namespace ChaosCats
         // Interaction bools
         private int currentDurability;
         private bool isBroken = false;
-        private bool playerInRange = false;
+        [SerializeField]private bool playerInRange = false;
         private GameObject playerModel;
         private GameObject player;
         private Renderer playerRenderer;
@@ -52,10 +58,11 @@ namespace ChaosCats
 
             UIInteraction.SetActive(false);
             objetoRoto.SetActive(false);
+            InteractTypeCheck();
         }
 
         private void Update() {
-            CheckPlayerInRange();
+            //CheckPlayerInRange();
 
             if (isDarkening)
             {
@@ -81,12 +88,12 @@ namespace ChaosCats
             CheckPlayerInRange();
         }*/
 
-        private void CheckPlayerInRange()
+        /*private void CheckPlayerInRange()
         {
             Vector3 distanceToPlayer = (player.transform.position - transform.position);
 
             playerInRange = distanceToPlayer.magnitude < inRangeDistance;
-        }
+        }*/
 
         private void Interact(InputAction.CallbackContext context) {
             if (playerInRange && !isBroken) {
@@ -146,6 +153,41 @@ namespace ChaosCats
             Color overlayColor = overlayImage.color;
             overlayColor.a = currentAlpha;
             overlayImage.color = overlayColor;
+        }
+
+        private void InteractTypeCheck()
+        {
+            if (canHide)
+            {
+                uIInteractables[0].SetActive(true);
+            }
+            else
+            {
+                uIInteractables[0].SetActive(false);
+            }
+            if(canDestroy) {
+                uIInteractables[1].SetActive(true);
+            }
+            else
+            {
+                uIInteractables[1].SetActive(false);
+            }
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if(other.gameObject == player)
+            {
+                playerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject == player)
+            {
+                playerInRange = false;
+            }
         }
     }
 }
