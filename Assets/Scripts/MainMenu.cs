@@ -19,7 +19,7 @@ namespace ChaosCats
             ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
             ServiceLocator.Instance.SoundEffectPlayer.Play("meowClick");
             StartCoroutine(WaitForSound());
-            eventBus.LoadSceneWithoutDelay?.Invoke("Main");
+            eventBus.LoadSceneWithoutDelay?.Invoke("Main v2 (GameDesign)");
         }
 
         public void Quit()
