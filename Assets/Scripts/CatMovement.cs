@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -8,13 +9,18 @@ namespace ChaosCats
     {
         [SerializeField] private InputActionAsset inputActionAsset;
         [SerializeField] private float speed = 80f;
+        [SerializeField] private float jumpForce = 8f;
+        [SerializeField] private float distanceToObjects = 1f;
         [SerializeField] private CatStatus catStatus;
         [SerializeField] private NavMeshAgent navMeshAgent;
+        [SerializeField] private float gravityScale = 1f;
 
         private Vector3 moveDirection;
         private Rigidbody rb;
         private InputActionMap inputActionMap;
-        public Animator catAnimator;
+        private Animator catAnimator;
+
+        private bool isGrounded = true;
 
         private void Awake()
         {
@@ -22,6 +28,7 @@ namespace ChaosCats
             inputActionMap = inputActionAsset.FindActionMap("PlayerActions", true);
             inputActionMap.FindAction("Move", true).performed += OnMovePerformed;
             inputActionMap.FindAction("Move", true).canceled += OnMoveCanceled;
+            inputActionMap.FindAction("Jump", true).performed += OnJumpPerformed;
         }
 
         private void Start()
@@ -41,16 +48,20 @@ namespace ChaosCats
             moveDirection = Vector3.zero;
         }
 
-        /* private bool CanMove(Vector3 direction)
+        private void OnJumpPerformed(InputAction.CallbackContext context)
+        {
+            if (!isGrounded) return;
+            catAnimator.SetTrigger("Jump");
+            // make the jump
+            rb.AddRelativeForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        }
+
+        private bool CanMove(Vector3 direction)
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, direction, out hit, obstacleDistance))
-            {
-                // If there's an obstacle in the given direction within the specified distance, return false
-                return false;
-            }
-            return true;
-        } */
+            // If there's an obstacle in the given direction within the specified distance, return false
+            return !(Physics.Raycast(transform.position, direction, out hit, distanceToObjects));
+        }
 
         private void FixedUpdate()
         {
@@ -68,10 +79,10 @@ namespace ChaosCats
 
             Vector3 move = (camRight * normalizedMoveDirection.x + camForward * normalizedMoveDirection.y) * speed * Time.deltaTime;
 
-            /*if (CanMove(move.normalized))
-            {
-                rb.MovePosition(transform.position + move);
-            }*/
+            // if (isJumping) move = move * 0.75f;
+
+            if (CanMove(move))
+                rb.position += move;
 
             // rotate to face the direction of movement
             if (move != Vector3.zero)
@@ -84,7 +95,27 @@ namespace ChaosCats
                 catAnimator.SetBool("IsWalking", false);
             }
 
-            navMeshAgent.Move(move);
+            // Custom gravity
+            rb.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            Debug.Log("Collision");
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            if (collision.collider != null && collision.collider.tag == "Floor")
+            {
+                isGrounded = true;
+            }
+        }
+        private void OnCollisionExit(Collision collision)
+        {
+            Debug.Log("Collision Exit");
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            if (collision.collider != null && collision.collider.tag == "Floor")
+            {
+                isGrounded = false;
+            }
         }
 
         private void OnEnable()
