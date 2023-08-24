@@ -3727,14 +3727,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 860522996143952582, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 860522996143952582, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_TagString
-      value: PlayerModel
-      objectReference: {fileID: 0}
     - target: {fileID: 1757004448001990912, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3775,36 +3767,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4629467198411746925, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629467198411746925, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629467198411746925, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5445292180575600816, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5521139310611537157, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6719211385684883561, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_Radius
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 6719211385684883561, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5521139310611537157, guid: 0f2c606b05418684f8aa36080e6fb535, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
