@@ -52,7 +52,6 @@ namespace ChaosCats
         {
             if (!isGrounded) return;
             catAnimator.SetTrigger("Jump");
-            // make the jump
             rb.AddRelativeForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
         }
 
@@ -79,8 +78,6 @@ namespace ChaosCats
 
             Vector3 move = (camRight * normalizedMoveDirection.x + camForward * normalizedMoveDirection.y) * speed * Time.deltaTime;
 
-            // if (isJumping) move = move * 0.75f;
-
             if (CanMove(move))
                 rb.position += move;
 
@@ -101,8 +98,6 @@ namespace ChaosCats
 
         private void OnCollisionEnter(Collision collision)
         {
-            Debug.Log("Collision");
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
             if (collision.collider != null && collision.collider.tag == "Floor")
             {
                 isGrounded = true;
@@ -110,8 +105,6 @@ namespace ChaosCats
         }
         private void OnCollisionExit(Collision collision)
         {
-            Debug.Log("Collision Exit");
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
             if (collision.collider != null && collision.collider.tag == "Floor")
             {
                 isGrounded = false;
