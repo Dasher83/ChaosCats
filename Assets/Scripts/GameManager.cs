@@ -29,12 +29,6 @@ namespace ChaosCats
         private Image overlayImage;
 
         [SerializeField]
-        private SkinnedMeshRenderer playerRenderer;
-
-        [SerializeField] 
-        private Material transparentMaterial;
-
-        [SerializeField]
         private Sprite angryIcon;
 
         [SerializeField]
@@ -58,15 +52,14 @@ namespace ChaosCats
             set {
                 _catIsHidden = value;
                 isDarkening = value;
-                if (value) {
+                player.GetComponent<CatMovement>().ToggleHiding(value);
+                if (value) { // Hide
                     currentAlpha = overlayImage.color.a;
-                    playerRenderer.material = transparentMaterial;
-                } else {
+                } else { // Unhide
                     currentAlpha = 0f;
                     Color overlayColor = overlayImage.color;
                     overlayColor.a = currentAlpha;
                     overlayImage.color = overlayColor;
-                    playerRenderer.material = originalMaterial;
                 }
             }
         }
@@ -77,9 +70,7 @@ namespace ChaosCats
         private float targetAlpha = 0.8f;
         private float currentAlpha = 0f;
         
-        private GameObject iconObject;
-
-        private Material originalMaterial;
+        private GameObject player;
 
         public bool runOver = false;
 
@@ -89,8 +80,7 @@ namespace ChaosCats
             timeLeft = levelTime;
             noiseLevel = 0;
             frustrationLevel = 0;
-            originalMaterial = playerRenderer.material;
-            iconObject = GameObject.FindWithTag("HumanStateUI");
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         private void Update()
@@ -134,7 +124,11 @@ namespace ChaosCats
             frustrationLevel++;
             eventBus.MakeNoise?.Invoke();
             if (HumanAI != null)
+            {
+                // Normalize Y to 0 before setting target
+                position.y = 0;
                 HumanAI.target = position;
+            }
         }
 
         public void UpdateScore(int pointsToAdd) {
@@ -147,7 +141,8 @@ namespace ChaosCats
             } else {
                 humanStateUI.GetComponent<Image>().sprite = sleepIcon;
             }
-            humanStateUI.GetComponent<Animator>().Play("UIPop");
+            // TODO: Play UI animation
+            // humanStateUI.GetComponent<Animator>().Play("UIPop");
         }
 
     }

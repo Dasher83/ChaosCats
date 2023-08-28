@@ -86,7 +86,7 @@ namespace ChaosCats
 
             if (!GameManager.Instance.catIsHidden) {
                 //Debug.Log("Esconderse");
-                if (breakSound != null) {
+                if (hideSound != null) {
                     AudioSource.PlayClipAtPoint(hideSound, transform.position);
                 }
                 GameManager.Instance.catIsHidden = true;
