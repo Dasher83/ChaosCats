@@ -125,8 +125,6 @@ namespace ChaosCats
             eventBus.MakeNoise?.Invoke();
             if (HumanAI != null)
             {
-                // Normalize Y to 0 before setting target
-                position.y = 0;
                 HumanAI.target = position;
             }
         }

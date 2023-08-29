@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace ChaosCats
 {
@@ -12,19 +14,47 @@ namespace ChaosCats
         private Transform Home;
 
         [SerializeField]
-        private CatStatus catStatus;
+        private int closeObjectsToSearch = 2;
 
-        public Vector3? target = null;
+        private Vector3? _target = null;
+        public Vector3? target
+        {
+            get { return _target; }
+            set
+            {
+                if (value != null)
+                {
+                    // Normalize Y to 0 before setting target
+                    Vector3 newValue = (Vector3)value;
+                    newValue.y = 0;
+                    NavMeshHit myNavHit;
+                    if (NavMesh.SamplePosition(newValue, out myNavHit, 2, -1))
+                    {
+                        _target = myNavHit.position;
+                    }
+                    else
+                    {
+                        _target = newValue;
+                    }
+                }
+                else
+                {
+                    _target = null;
+                }
+            }
+        }
 
         private NavMeshAgent agent;
         private Animator animator;
         private GameObject[] interactableObjects;
+        private int objectsSearched;
 
         void Start()
         {
             interactableObjects = GameObject.FindGameObjectsWithTag("Interactable");
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponentInChildren<Animator>();
+            objectsSearched = 0;
         }
 
         void Update()
@@ -54,12 +84,26 @@ namespace ChaosCats
             }
             else
             {
-                if (agent.remainingDistance <= agent.stoppingDistance || catStatus.getHiding())
+                if (agent.remainingDistance <= agent.stoppingDistance)
                 {
+                    // Debug.Log("Reached destination");
                     target = null;
-                    int randomIndex = Random.Range(0, interactableObjects.Length);
-                    agent.SetDestination(interactableObjects[randomIndex].transform.position);
-                    StartCoroutine(WaitAndGoHome());
+                    // Get the closest interactable object
+                    Array.Sort(interactableObjects, (x, y) =>
+                        Vector3.Distance(x.transform.position, transform.position).CompareTo(
+                            Vector3.Distance(y.transform.position, transform.position)
+                        )
+                    );
+                    if (objectsSearched < closeObjectsToSearch)
+                    {
+                        objectsSearched++;
+                        StartCoroutine(WaitAndGoTo(interactableObjects[objectsSearched].transform.position));
+                    }
+                    else
+                    {
+                        objectsSearched = 0;
+                        StartCoroutine(WaitAndGoHome());
+                    }
                 }
             }
         }
@@ -74,10 +118,22 @@ namespace ChaosCats
                 Gizmos.DrawCube(agent.destination, Vector3.one);
         }
 
+        public void StartChasingPlayer()
+        {
+            Debug.Log("StartChasingPlayer");
+            StopAllCoroutines();
+        }
+
+        IEnumerator WaitAndGoTo(Vector3 newDestination)
+        {
+            yield return new WaitForSeconds(5);
+            target = newDestination;
+        }
+
         IEnumerator WaitAndGoHome()
         {
             yield return new WaitForSeconds(5);
-            agent.SetDestination(Home.transform.position);
+            agent.SetDestination(Home.position);
         }
     }
 }
