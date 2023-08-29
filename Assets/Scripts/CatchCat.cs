@@ -8,7 +8,7 @@ namespace ChaosCats
         private Transform player;
         private EventBus eventBus;
 
-        private bool IsInCathingRange => (player.transform.position - transform.position).magnitude < catchingDistance;
+        private bool isInCatchingRange => (player.transform.position - transform.position).magnitude < catchingDistance;
 
         private void Awake()
         {
@@ -18,7 +18,7 @@ namespace ChaosCats
 
         private void Update()
         {
-            if (GameManager.Instance.runOver || GameManager.Instance.catIsHidden || IsInCathingRange == false) return;
+            if (GameManager.Instance.runOver || GameManager.Instance.catIsHidden || isInCatchingRange == false) return;
 
             eventBus.PlayerCaught?.Invoke();
         }
