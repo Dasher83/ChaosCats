@@ -4,27 +4,23 @@ namespace ChaosCats
 {
     public class CatchCat : MonoBehaviour
     {
-        [SerializeField] private EventBus eventBus;
-        [SerializeField] private Transform player;
-        [SerializeField] private float inRangeDistance;
-        private bool playerInRange;
+        [SerializeField] private float catchingDistance;
+        private Transform player;
+        private EventBus eventBus;
 
-        private void Start()
+        private bool isInCatchingRange => (player.transform.position - transform.position).magnitude < catchingDistance;
+
+        private void Awake()
         {
-            playerInRange = false; 
+            player = GameObject.FindGameObjectWithTag(tag: "Player").transform;
+            eventBus = Resources.Load<EventBus>("EventBus");
         }
 
         private void Update()
         {
-            if (GameManager.Instance.runOver) return;
-            CheckPlayerInRange();
-            if (playerInRange && !GameManager.Instance.catIsHidden) eventBus.PlayerCaught?.Invoke();
-        }
+            if (GameManager.Instance.runOver || GameManager.Instance.catIsHidden || isInCatchingRange == false) return;
 
-        private void CheckPlayerInRange()
-        {
-            Vector3 distanceToPlayer = (player.transform.position - transform.position);
-            playerInRange = distanceToPlayer.magnitude < inRangeDistance;
+            eventBus.PlayerCaught?.Invoke();
         }
     }
 }
