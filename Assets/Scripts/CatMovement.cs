@@ -14,6 +14,7 @@ namespace ChaosCats
         [SerializeField] private CatStatus catStatus;
         [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private float gravityScale = 1f;
+        [SerializeField] private Material transparentMaterial;
 
         private Vector3 moveDirection;
         private Rigidbody rb;
@@ -21,6 +22,9 @@ namespace ChaosCats
         private Animator catAnimator;
 
         private bool isGrounded = true;
+        private bool isHiding = false;
+
+        private Material originalMaterial;
 
         private void Awake()
         {
@@ -29,6 +33,7 @@ namespace ChaosCats
             inputActionMap.FindAction("Move", true).performed += OnMovePerformed;
             inputActionMap.FindAction("Move", true).canceled += OnMoveCanceled;
             inputActionMap.FindAction("Jump", true).performed += OnJumpPerformed;
+            originalMaterial = GetComponentInChildren<SkinnedMeshRenderer>().material;
         }
 
         private void Start()
@@ -64,7 +69,7 @@ namespace ChaosCats
 
         private void FixedUpdate()
         {
-            if (GameManager.Instance.catIsHidden) return;
+            if (isHiding) return;
 
             Vector3 camForward = Camera.main.transform.forward;
             Vector3 camRight = Camera.main.transform.right;
@@ -119,6 +124,17 @@ namespace ChaosCats
         private void OnDisable()
         {
             inputActionMap.Disable();
+        }
+
+        public void ToggleHiding(bool hide)
+        {
+            isHiding = hide;
+            SkinnedMeshRenderer skinnedMeshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
+            if (skinnedMeshRenderer != null)
+            {
+                skinnedMeshRenderer.material = (hide ? transparentMaterial : originalMaterial);
+            }
+            GetComponent<CapsuleCollider>().enabled = !hide;
         }
     }
 }

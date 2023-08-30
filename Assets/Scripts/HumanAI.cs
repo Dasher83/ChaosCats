@@ -49,8 +49,7 @@ namespace ChaosCats
 
             if (distanceTargetDestination > 0.2f)
             {
-                Debug.Log("Human going to " + target);
-                Debug.Log(distanceTargetDestination);
+                // Debug.Log("Destination: " + agent.destination + " || Target: " + (Vector3)target + " || Distance: " + distanceTargetDestination);
                 agent.SetDestination((Vector3)target);
             }
             else
@@ -67,8 +66,12 @@ namespace ChaosCats
 
         void OnDrawGizmos()
         {
+            Gizmos.color = Color.red;
             if (target != null)
                 Gizmos.DrawLine(transform.position, (Vector3)target);
+
+            if (agent != null && agent.destination != null)
+                Gizmos.DrawCube(agent.destination, Vector3.one);
         }
 
         IEnumerator WaitAndGoHome()
