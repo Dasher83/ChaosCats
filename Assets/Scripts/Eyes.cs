@@ -18,7 +18,7 @@ namespace ChaosCats
             if (other.gameObject.CompareTag("Player") && humanAI != null && !GameManager.Instance.catIsHidden)
             {
                 Debug.Log("Player detected!");
-                humanAI.StartChasingPlayer();
+                humanAI.OnAlerted();
             }
         }
 

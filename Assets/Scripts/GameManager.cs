@@ -126,6 +126,7 @@ namespace ChaosCats
             if (HumanAI != null)
             {
                 HumanAI.target = position;
+                HumanAI.OnAlerted();
             }
         }
 

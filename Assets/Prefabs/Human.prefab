@@ -126,7 +126,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Home: {fileID: 0}
-  closeObjectsToSearch: 2
+  searchableObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  closeObjectsToSearch: 3
 --- !u!195 &5506694778798082923
 NavMeshAgent:
   m_ObjectHideFlags: 0

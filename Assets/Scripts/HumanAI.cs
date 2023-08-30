@@ -14,6 +14,9 @@ namespace ChaosCats
         private Transform Home;
 
         [SerializeField]
+        private Transform[] searchableObjects;
+
+        [SerializeField]
         private int closeObjectsToSearch = 2;
 
         private Vector3? _target = null;
@@ -46,15 +49,15 @@ namespace ChaosCats
 
         private NavMeshAgent agent;
         private Animator animator;
-        private GameObject[] interactableObjects;
+        private Transform[] closeSearchableObjects;
         private int objectsSearched;
 
         void Start()
         {
-            interactableObjects = GameObject.FindGameObjectsWithTag("Interactable");
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponentInChildren<Animator>();
             objectsSearched = 0;
+            closeSearchableObjects = null;
         }
 
         void Update()
@@ -88,19 +91,33 @@ namespace ChaosCats
                 {
                     // Debug.Log("Reached destination");
                     target = null;
-                    // Get the closest interactable object
-                    Array.Sort(interactableObjects, (x, y) =>
-                        Vector3.Distance(x.transform.position, transform.position).CompareTo(
-                            Vector3.Distance(y.transform.position, transform.position)
-                        )
-                    );
+
+                    if (searchableObjects == null || searchableObjects.Length == 0) // If no searchable objects, go home
+                    {
+                        Debug.LogError("No searchable objects assigned to Human AI!");
+                        StartCoroutine(WaitAndGoHome());
+                        return;
+                    }
+
+                    if (closeSearchableObjects == null) // If no close searchable objects have been set, set them and sort by distance
+                    {
+                        closeSearchableObjects = searchableObjects;
+                        Debug.Log("Found " + closeSearchableObjects.Length + " close searchable objects");
+                        Array.Sort(closeSearchableObjects, (x, y) =>
+                            Vector3.Distance(x.position, transform.position).CompareTo(
+                                Vector3.Distance(y.position, transform.position)
+                            )
+                        );
+                    }
+                    
                     if (objectsSearched < closeObjectsToSearch)
                     {
                         objectsSearched++;
-                        StartCoroutine(WaitAndGoTo(interactableObjects[objectsSearched].transform.position));
+                        StartCoroutine(WaitAndGoTo(closeSearchableObjects[objectsSearched].position));
                     }
                     else
                     {
+                        closeSearchableObjects = null;
                         objectsSearched = 0;
                         StartCoroutine(WaitAndGoHome());
                     }
@@ -118,9 +135,11 @@ namespace ChaosCats
                 Gizmos.DrawCube(agent.destination, Vector3.one);
         }
 
-        public void StartChasingPlayer()
+        public void OnAlerted()
         {
-            Debug.Log("StartChasingPlayer");
+            Debug.Log("OnAlerted");
+            closeSearchableObjects = null;
+            objectsSearched = 0;
             StopAllCoroutines();
         }
 
