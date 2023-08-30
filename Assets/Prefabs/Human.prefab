@@ -141,7 +141,7 @@ NavMeshAgent:
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 250
-  m_StoppingDistance: 1
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5973980670899845211}
   - component: {fileID: 1441660467620882037}
   - component: {fileID: 2188561686381344564}
-  - component: {fileID: 9187757264603467371}
+  - component: {fileID: 7753103420368520024}
   m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
@@ -259,7 +259,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.62
   m_Center: {x: 0, y: 0, z: 0.32}
---- !u!135 &9187757264603467371
+--- !u!135 &7753103420368520024
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
