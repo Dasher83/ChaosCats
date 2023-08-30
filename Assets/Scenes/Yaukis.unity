@@ -2602,18 +2602,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2121330283}
     - target: {fileID: 2530506724776117646, guid: 2762e70348a274092870647f9b00e722, type: 3}
-      propertyPath: closeObjectsToSearch
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2530506724776117646, guid: 2762e70348a274092870647f9b00e722, type: 3}
-      propertyPath: searchableObjectsContainer
-      value: 
-      objectReference: {fileID: 1315340200}
-    - target: {fileID: 2530506724776117646, guid: 2762e70348a274092870647f9b00e722, type: 3}
-      propertyPath: searchableObjects.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2530506724776117646, guid: 2762e70348a274092870647f9b00e722, type: 3}
       propertyPath: searchableObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1831858003}
