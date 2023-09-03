@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using ChaosCats.Scriptables;
 using TMPro;
 using UnityEngine;
 
@@ -7,11 +6,12 @@ namespace ChaosCats
 {
     public class SetMainMenuScore : MonoBehaviour
     {
-        public CatStatus catStatus;        
+        private GameSession lastGameSession;
 
         private void Start()
         {
-            GetComponent<TextMeshProUGUI>().text = "Score: " + catStatus.playerScore;
+            lastGameSession = Resources.Load<GameSession>("GameSession");
+            GetComponent<TextMeshProUGUI>().text = "Score: " + lastGameSession.PlayerScore;
         }
     }
 }

@@ -101,7 +101,6 @@ namespace ChaosCats
                 runOver = true;
                 ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
                 ServiceLocator.Instance.SoundEffectPlayer.Play("alarm");
-                eventBus.UpdateScriptableScore?.Invoke(gameSession.PlayerScore);
                 eventBus.LoadSceneWithDelay?.Invoke("MainMenu", 4.0f);
 
                 //return;
