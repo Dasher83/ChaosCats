@@ -19,9 +19,6 @@ namespace ChaosCats
         }
 
         [SerializeField]
-        private TMPro.TextMeshProUGUI TimerText;
-
-        [SerializeField]
         private TMPro.TextMeshProUGUI ScoreText;
 
         [SerializeField]
@@ -106,8 +103,7 @@ namespace ChaosCats
                 //return;
             }
             gameSession.timeLeft = Mathf.Max(gameSession.levelTime - (int)Time.timeSinceLevelLoad, 0);
-            if (TimerText != null)
-                TimerText.text = gameSession.timeLeft.ToString();
+
             if (ScoreText != null)
                 ScoreText.text = gameSession.PlayerScore.ToString();
         }
