@@ -25,15 +25,16 @@ namespace ChaosCats.Scriptables
 
         public void OnEnable()
         {
-            PlayerScored.AddListener(
-                (scoreToAdd) => { playerScore += scoreToAdd; });
+            PlayerScored.AddListener(AddToPlayerScore);
         }
 
         public void OnDisable()
         {
-            PlayerScored.RemoveAllListeners();
+            PlayerScored?.RemoveListener(AddToPlayerScore);
         }
 
         public int PlayerScore => playerScore;
+
+        private void AddToPlayerScore(int scoreToAdd) => playerScore += scoreToAdd;
     }
 }

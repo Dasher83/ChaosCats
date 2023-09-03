@@ -1,17 +1,16 @@
-using ChaosCats.Scriptables;
 using TMPro;
 using UnityEngine;
 
-namespace ChaosCats.UI
+namespace ChaosCats.UI.GameSession
 {
     public class UpdateTimerText : MonoBehaviour
     {
-        private GameSession gameSession;
+        private Scriptables.GameSession gameSession;
         private TextMeshProUGUI timerText;
 
         private void Start()
         {
-            gameSession = Resources.Load<GameSession>("GameSession");
+            gameSession = Resources.Load<Scriptables.GameSession>("GameSession");
             timerText = GetComponent<TextMeshProUGUI>();
         }
 

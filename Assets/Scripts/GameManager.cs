@@ -19,9 +19,6 @@ namespace ChaosCats
         }
 
         [SerializeField]
-        private TMPro.TextMeshProUGUI ScoreText;
-
-        [SerializeField]
         private HumanAI HumanAI;
 
         [SerializeField]
@@ -103,9 +100,6 @@ namespace ChaosCats
                 //return;
             }
             gameSession.timeLeft = Mathf.Max(gameSession.levelTime - (int)Time.timeSinceLevelLoad, 0);
-
-            if (ScoreText != null)
-                ScoreText.text = gameSession.PlayerScore.ToString();
         }
 
         public void MakeNoise(Vector3 position) {
