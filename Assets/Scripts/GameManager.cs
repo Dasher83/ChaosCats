@@ -101,7 +101,7 @@ namespace ChaosCats
                 runOver = true;
                 ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
                 ServiceLocator.Instance.SoundEffectPlayer.Play("alarm");
-                eventBus.UpdateScriptableScore?.Invoke(gameSession.playerScore);
+                eventBus.UpdateScriptableScore?.Invoke(gameSession.PlayerScore);
                 eventBus.LoadSceneWithDelay?.Invoke("MainMenu", 4.0f);
 
                 //return;
@@ -110,7 +110,7 @@ namespace ChaosCats
             if (TimerText != null)
                 TimerText.text = gameSession.timeLeft.ToString();
             if (ScoreText != null)
-                ScoreText.text = gameSession.playerScore.ToString();
+                ScoreText.text = gameSession.PlayerScore.ToString();
         }
 
         public void MakeNoise(Vector3 position) {
@@ -123,10 +123,6 @@ namespace ChaosCats
                 HumanAI.target = position;
                 HumanAI.OnAlerted();
             }
-        }
-
-        public void UpdateScore(int pointsToAdd) {
-            gameSession.playerScore += pointsToAdd;
         }
 
         public void UpdateHumanStateUI(bool humanAwakened) {
