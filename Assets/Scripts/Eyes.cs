@@ -6,16 +6,27 @@ namespace ChaosCats
 {
     public class Eyes : MonoBehaviour
     {
-        [SerializeField]
         private HumanAI humanAI;
+
+        private void Start()
+        {
+            humanAI = GetComponentInParent<HumanAI>();
+        }
+
+        void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player") && humanAI != null && !GameManager.Instance.catIsHidden)
+            {
+                Debug.Log("Player detected!");
+                humanAI.OnAlerted();
+            }
+        }
 
         void OnTriggerStay(Collider other)
         {
             if (other.gameObject.CompareTag("Player") && humanAI != null && !GameManager.Instance.catIsHidden)
             {
-                Debug.Log("Player detected!");
-                Vector3 target = new Vector3(other.gameObject.transform.position.x, 0, other.gameObject.transform.position.z);
-                humanAI.target = target;
+                humanAI.target = other.gameObject.transform.position;
             }
         }
     }
