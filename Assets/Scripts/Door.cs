@@ -1,6 +1,5 @@
+using ChaosCats.Scriptables;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 namespace ChaosCats
 {
@@ -8,14 +7,14 @@ namespace ChaosCats
     {
         [SerializeField] private GameObject openedDoor;
         [SerializeField] private GameObject closedDoor;
-        [SerializeField] private EventBus eventBus;
+        [SerializeField] private GameSession gameSession;
         private bool opened;
 
         private void Start()
         {
             opened = false;
             SetDoorState();
-            eventBus.MakeNoise.AddListener(Toggle);
+            gameSession.MadeNoise.AddListener(Toggle);
         }
 
         private void Toggle()
@@ -33,7 +32,7 @@ namespace ChaosCats
 
         private void OnDisable()
         {
-            eventBus.MakeNoise.RemoveListener(Toggle);
+            gameSession.MadeNoise.RemoveListener(Toggle);
         }
     }
 }

@@ -1,3 +1,4 @@
+using ChaosCats.Scriptables;
 using UnityEngine;
 
 namespace ChaosCats
@@ -6,12 +7,17 @@ namespace ChaosCats
     {
         [SerializeField] private GameObject human;
         [SerializeField] private GameObject spawnPoint;
-        [SerializeField] private EventBus eventBus;
+        [SerializeField] private GameSession gameSession;
 
         private void Start()
         {
-            eventBus.MakeNoise.AddListener(WakeUpHuman);
+            gameSession.MadeNoise.AddListener(WakeUpHuman);
             human.SetActive(false);
+        }
+
+        public void OnDisable()
+        {
+            gameSession.MadeNoise?.RemoveListener(WakeUpHuman);
         }
 
         private void WakeUpHuman()

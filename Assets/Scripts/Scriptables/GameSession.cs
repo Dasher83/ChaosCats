@@ -9,10 +9,11 @@ namespace ChaosCats.Scriptables
         private int playerScore;
         private float totalSessionDuration;
         private float sessionTimeLeft;
-        public int noiseLevel;
+        private int noiseLevel;
         public int frustrationLevel;
 
         public UnityEvent<int> PlayerScored;
+        public UnityEvent MadeNoise;
 
         public void Initialize()
         {
@@ -32,17 +33,21 @@ namespace ChaosCats.Scriptables
         public void OnEnable()
         {
             PlayerScored.AddListener(AddToPlayerScore);
+            MadeNoise.AddListener(AddToNoiseLevel);
         }
 
         public void OnDisable()
         {
             PlayerScored?.RemoveListener(AddToPlayerScore);
+            MadeNoise?.RemoveListener(AddToNoiseLevel);
         }
 
         public int PlayerScore => playerScore;
         public float TotalSessionDuration => TotalSessionDuration;
         public float SessionTimeLeft => sessionTimeLeft;
+        public int NoiseLevel => noiseLevel;
 
         private void AddToPlayerScore(int scoreToAdd) => playerScore += scoreToAdd;
+        private void AddToNoiseLevel() => noiseLevel++;
     }
 }
