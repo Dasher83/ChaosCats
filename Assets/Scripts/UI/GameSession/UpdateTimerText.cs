@@ -16,7 +16,7 @@ namespace ChaosCats.UI.GameSession
 
         private void Update()
         {
-            timerText.text = gameSession.timeLeft.ToString();
+            timerText.text = gameSession.SessionTimeLeft.ToString("0.");
         }
     }
 }

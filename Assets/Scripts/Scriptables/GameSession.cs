@@ -7,8 +7,8 @@ namespace ChaosCats.Scriptables
     public class GameSession : ScriptableObject
     {
         private int playerScore;
-        public int levelTime;
-        public int timeLeft;
+        private float totalSessionDuration;
+        private float sessionTimeLeft;
         public int noiseLevel;
         public int frustrationLevel;
 
@@ -17,10 +17,16 @@ namespace ChaosCats.Scriptables
         public void Initialize()
         {
             playerScore = 0;
-            levelTime = 60;
-            timeLeft = levelTime;
+            totalSessionDuration = 60;
+            sessionTimeLeft = totalSessionDuration;
             noiseLevel = 0;
             frustrationLevel = 0;
+        }
+
+        public void Tick(float deltaTime)
+        {
+            sessionTimeLeft -= deltaTime;
+            if (sessionTimeLeft < 0) sessionTimeLeft = 0;
         }
 
         public void OnEnable()
@@ -34,6 +40,8 @@ namespace ChaosCats.Scriptables
         }
 
         public int PlayerScore => playerScore;
+        public float TotalSessionDuration => TotalSessionDuration;
+        public float SessionTimeLeft => sessionTimeLeft;
 
         private void AddToPlayerScore(int scoreToAdd) => playerScore += scoreToAdd;
     }

@@ -89,7 +89,7 @@ namespace ChaosCats
             if (runOver)
                 return;
 
-            if (gameSession.timeLeft == 0)
+            if (gameSession.SessionTimeLeft == 0)
             {
                 Debug.Log("Run is Over, time's up!");
                 runOver = true;
@@ -99,7 +99,7 @@ namespace ChaosCats
 
                 //return;
             }
-            gameSession.timeLeft = Mathf.Max(gameSession.levelTime - (int)Time.timeSinceLevelLoad, 0);
+            gameSession.Tick(deltaTime: Time.deltaTime);
         }
 
         public void MakeNoise(Vector3 position) {
