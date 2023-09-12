@@ -104,7 +104,6 @@ namespace ChaosCats
 
         public void MakeNoise(Vector3 position) {
             Debug.Log("Noise made at " + position + "!");
-            gameSession.frustrationLevel++;
             gameSession.MadeNoise?.Invoke();
             if (HumanAI != null)
             {
