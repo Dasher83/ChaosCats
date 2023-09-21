@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using ChaosCats.Scriptables;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 namespace ChaosCats
 {
@@ -25,10 +22,11 @@ namespace ChaosCats
        
         private int currentDurability;
         private bool isBroken = false;
-
+        private GameSession gameSession;
 
         void Start()
         {
+            gameSession = Resources.Load<GameSession>("GameSession");
             smokeParticleSystem.Stop();
             currentDurability = durability;
 
@@ -46,19 +44,6 @@ namespace ChaosCats
             UIInteraction.SetActive(false);
         }
 
-        /*
-        private void FixedUpdate()
-        {
-            CheckPlayerInRange();
-        }*/
-
-        /*private void CheckPlayerInRange()
-        {
-            Vector3 distanceToPlayer = (player.transform.position - transform.position);
-
-            playerInRange = distanceToPlayer.magnitude < inRangeDistance;
-        }*/
-
         override public void Interact() {
             if (!isBroken && !GameManager.Instance.catIsHidden) {
                 if (npcWaypoint != null) {
@@ -69,13 +54,13 @@ namespace ChaosCats
                 smokeParticleSystem.Play();
                 if (currentDurability > 0) {
                     currentDurability--;
-                    GameManager.Instance.UpdateScore(damagePointsValue);
+                    gameSession.PlayerScored?.Invoke(damagePointsValue);
                 } else {
                     if (breakSound != null) {
                         AudioSource.PlayClipAtPoint(breakSound, transform.position);
                     }
                     CambiarModelo();
-                    GameManager.Instance.UpdateScore(breakingPointsValue);
+                    gameSession.PlayerScored?.Invoke(breakingPointsValue);
                     isBroken = true;
                 }
             }

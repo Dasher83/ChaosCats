@@ -1,3 +1,4 @@
+using ChaosCats.Scriptables;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ namespace ChaosCats
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] private GameSession gameSession;
         [SerializeField] private EventBus eventBus;
 
         public static GameManager Instance { get; private set; }
@@ -15,12 +17,6 @@ namespace ChaosCats
             else
                 Destroy(gameObject);
         }
-
-        [SerializeField]
-        private TMPro.TextMeshProUGUI TimerText;
-
-        [SerializeField]
-        private TMPro.TextMeshProUGUI ScoreText;
 
         [SerializeField]
         private HumanAI HumanAI;
@@ -40,11 +36,7 @@ namespace ChaosCats
         [SerializeField]
         private AudioClip alarmSound;
 
-        public int playerScore;
-        public int levelTime = 60;
-        public int timeLeft;
-        public int noiseLevel;
-        public int frustrationLevel;
+        public GameSession GameSession => gameSession;
 
         private bool _catIsHidden = false;
         public bool catIsHidden {
@@ -76,11 +68,8 @@ namespace ChaosCats
 
         private void Start()
         {
-            playerScore = 0;
-            timeLeft = levelTime;
-            noiseLevel = 0;
-            frustrationLevel = 0;
             player = GameObject.FindGameObjectWithTag("Player");
+            gameSession.Initialize();
         }
 
         private void Update()
@@ -100,38 +89,27 @@ namespace ChaosCats
             if (runOver)
                 return;
 
-            if (timeLeft == 0)
+            if (gameSession.SessionTimeLeft == 0)
             {
                 Debug.Log("Run is Over, time's up!");
                 runOver = true;
                 ServiceLocator.Instance.BackgroundMusicPlayer.StopAll();
                 ServiceLocator.Instance.SoundEffectPlayer.Play("alarm");
-                eventBus.UpdateScriptableScore?.Invoke(playerScore);
                 eventBus.LoadSceneWithDelay?.Invoke("MainMenu", 4.0f);
 
                 //return;
             }
-            timeLeft = Mathf.Max(levelTime - (int)Time.timeSinceLevelLoad, 0);
-            if (TimerText != null)
-                TimerText.text = timeLeft.ToString();
-            if (ScoreText != null)
-                ScoreText.text = playerScore.ToString();
+            gameSession.Tick(deltaTime: Time.deltaTime);
         }
 
         public void MakeNoise(Vector3 position) {
             Debug.Log("Noise made at " + position + "!");
-            noiseLevel++;
-            frustrationLevel++;
-            eventBus.MakeNoise?.Invoke();
+            gameSession.MadeNoise?.Invoke();
             if (HumanAI != null)
             {
                 HumanAI.target = position;
                 HumanAI.OnAlerted();
             }
-        }
-
-        public void UpdateScore(int pointsToAdd) {
-            playerScore += pointsToAdd;
         }
 
         public void UpdateHumanStateUI(bool humanAwakened) {

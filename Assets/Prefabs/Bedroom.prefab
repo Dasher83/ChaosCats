@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openedDoor: {fileID: 1114578018532040244}
   closedDoor: {fileID: 8287000081279067154}
-  eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
+  gameSession: {fileID: 11400000, guid: 76a4e84139b095045a6ffa6a467d667e, type: 2}
 --- !u!114 &5630594704121412666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   human: {fileID: 0}
   spawnPoint: {fileID: 4452247276931312695}
-  eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
+  gameSession: {fileID: 11400000, guid: 76a4e84139b095045a6ffa6a467d667e, type: 2}
 --- !u!1 &8287000081279067154
 GameObject:
   m_ObjectHideFlags: 0

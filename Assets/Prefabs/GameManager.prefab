@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6aab8e6e3d9844e2a22da04c7d47c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSession: {fileID: 11400000, guid: 76a4e84139b095045a6ffa6a467d667e, type: 2}
   eventBus: {fileID: 11400000, guid: bcf527f01b8a16941a31024946923af4, type: 2}
   TimerText: {fileID: 0}
   ScoreText: {fileID: 0}
@@ -54,11 +55,6 @@ MonoBehaviour:
   sleepIcon: {fileID: 21300000, guid: 8c29572e951df42e58ecc8bb6dc44624, type: 3}
   humanStateUI: {fileID: 0}
   alarmSound: {fileID: 8300000, guid: a95441975095b4f49840a49c97476aae, type: 3}
-  playerScore: 0
-  levelTime: 600
-  timeLeft: 0
-  noiseLevel: 0
-  frustrationLevel: 0
   runOver: 0
 --- !u!114 &1280586628837416472
 MonoBehaviour:
